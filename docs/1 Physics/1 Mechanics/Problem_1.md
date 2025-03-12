@@ -15,15 +15,25 @@ Projectile motion follows Newton’s laws of motion. We analyze the motion by se
 The motion of a projectile launched with initial velocity \( v_0 \) at an angle \( \theta \) is governed by:
 
 - **Horizontal motion (constant velocity)**  
-  &nbsp;x=v₀cos(θ)t
+  \[
+  x = v_0 \cos(\theta) t
+  \]
 - **Vertical motion (accelerated due to gravity)**  
-  &nbsp;y=v₀sin(θ)t−1/2gt²
+  \[
+  y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
+  \]
 - **Time of flight (when \( y = 0 \))**  
-  &nbsp;tբ=(2v₀sin(θ))/g
+  \[
+  t_f = \frac{2 v_0 \sin(\theta)}{g}
+  \]
 - **Range of projectile**  
-  &nbsp;R=(v₀²sin(2θ))/g
+  \[
+  R = \frac{v_0^2 \sin(2\theta)}{g}
+  \]
 - **Maximum height**  
-  &nbsp;H=(v₀²sin²(θ))/2g
+  \[
+  H = \frac{v_0^2 \sin^2(\theta)}{2g}
+  \]
 
 ### **1.2 Effects of Air Resistance**
 
