@@ -126,12 +126,10 @@
 <h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
 <p>Projectile motion follows Newton’s laws of motion. We analyze the motion by separating it into horizontal and vertical components.</p>
 <h3 id="11-equations-of-motion"><strong>1.1 Equations of Motion</strong></h3>
-<p>The motion of a projectile launched with initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> is governed by:  </p>
+<p>The motion of a projectile launched with initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> is governed by:</p>
 <ul>
 <li><strong>Horizontal motion (constant velocity)</strong><br/>
-  [
-  x = v_0 \cos(\theta) t
-  ]</li>
+  x=v₀cos(θ)t</li>
 <li><strong>Vertical motion (accelerated due to gravity)</strong><br/>
   [
   y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
@@ -150,39 +148,45 @@
   ]</li>
 </ul>
 <h3 id="12-effects-of-air-resistance"><strong>1.2 Effects of Air Resistance</strong></h3>
-<p>Without air resistance, projectiles follow a <strong>parabolic trajectory</strong>. However, with air resistance, the motion is more complex because drag opposes velocity. The drag force is given by:  </p>
+<p>Without air resistance, projectiles follow a <strong>parabolic trajectory</strong>. However, with air resistance, the motion is more complex because drag opposes velocity. The drag force is given by:</p>
 <div class="arithmatex">\[
 F_d = \frac{1}{2} C_d \rho A v^2
 \]</div>
-<p>where:<br/>
-- <span class="arithmatex">\( C_d \)</span> = drag coefficient (depends on object shape)<br/>
-- <span class="arithmatex">\( \rho \)</span> = air density (kg/m³)<br/>
-- <span class="arithmatex">\( A \)</span> = cross-sectional area (m²)<br/>
-- <span class="arithmatex">\( v \)</span> = velocity (m/s)  </p>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( C_d \)</span> = drag coefficient (depends on object shape)</li>
+<li><span class="arithmatex">\( \rho \)</span> = air density (kg/m³)</li>
+<li><span class="arithmatex">\( A \)</span> = cross-sectional area (m²)</li>
+<li><span class="arithmatex">\( v \)</span> = velocity (m/s)</li>
+</ul>
 <p>The equations of motion then become <strong>nonlinear differential equations</strong>, which we solve numerically.</p>
 <hr/>
 <h2 id="2-analytical-analysis-of-range"><strong>2. Analytical Analysis of Range</strong></h2>
 <p>This section plots <strong>range vs. launch angle</strong> without air resistance.</p>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<h1 id="constants">Constants</h1>
-<p>g = 9.81  # gravitational acceleration (m/s²)
-v0 = 20   # initial velocity (m/s)</p>
-<h1 id="angle-range-0-to-90">Angle range (0° to 90°)</h1>
-<p>theta = np.linspace(0, 90, 100)
-theta_rad = np.radians(theta)  # Convert to radians</p>
-<h1 id="compute-range">Compute range</h1>
-<p>R = (v0**2 * np.sin(2 * theta_rad)) / g</p>
-<h1 id="plot-range-vs-angle">Plot range vs. angle</h1>
-<p>plt.figure(figsize=(8, 5))
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+# Constants
+g = 9.81  # gravitational acceleration (m/s²)
+v0 = 20   # initial velocity (m/s)
+
+# Angle range (0° to 90°)
+theta = np.linspace(0, 90, 100)
+theta_rad = np.radians(theta)  # Convert to radians
+
+# Compute range
+R = (v0**2 * np.sin(2 * theta_rad)) / g
+
+# Plot range vs. angle
+plt.figure(figsize=(8, 5))
 plt.plot(theta, R, label=f'Initial velocity = {v0} m/s')
 plt.xlabel('Launch Angle (°)')
 plt.ylabel('Range (m)')
 plt.title('Projectile Range vs. Launch Angle')
 plt.legend()
 plt.grid()
-plt.show()</p>
+plt.show()
+</code></pre>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
