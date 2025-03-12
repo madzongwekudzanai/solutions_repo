@@ -17,13 +17,9 @@ The motion of a projectile launched with initial velocity \( v_0 \) at an angle 
 - **Horizontal motion (constant velocity)**  
   &nbsp;x=v₀cos(θ)t
 - **Vertical motion (accelerated due to gravity)**  
-  \[
-  y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
-  \]
+  &nbsp;y=v₀sin(θ)t−1/2gt²
 - **Time of flight (when \( y = 0 \))**  
-  \[
-  t_f = \frac{2 v_0 \sin(\theta)}{g}
-  \]
+  &nbsp;tf
 - **Range of projectile**  
   \[
   R = \frac{v_0^2 \sin(2\theta)}{g}
