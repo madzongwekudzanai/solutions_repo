@@ -19,15 +19,11 @@ The motion of a projectile launched with initial velocity \( v_0 \) at an angle 
 - **Vertical motion (accelerated due to gravity)**  
   &nbsp;y=v₀sin(θ)t−1/2gt²
 - **Time of flight (when \( y = 0 \))**  
-  &nbsp;tf
+  &nbsp;tբ=(2v₀sin(θ))/g
 - **Range of projectile**  
-  \[
-  R = \frac{v_0^2 \sin(2\theta)}{g}
-  \]
+  &nbsp;R=(v₀²sin(2θ))/g
 - **Maximum height**  
-  \[
-  H = \frac{v_0^2 \sin^2(\theta)}{2g}
-  \]
+  &nbsp;H=(v₀²sin²(θ))/2g
 
 ### **1.2 Effects of Air Resistance**
 
