@@ -15,7 +15,7 @@ Projectile motion follows Newton’s laws of motion. We analyze the motion by se
 The motion of a projectile launched with initial velocity \( v_0 \) at an angle \( \theta \) is governed by:
 
 - **Horizontal motion (constant velocity)**  
-  x=v₀cos(θ)t
+  &nbsp;x=v₀cos(θ)t
 - **Vertical motion (accelerated due to gravity)**  
   \[
   y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
