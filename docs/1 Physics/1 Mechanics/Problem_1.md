@@ -1,8 +1,6 @@
 # Problem 1
 # **Projectile Motion Analysis and Simulation**
-### **Investigating the Range as a Function of the Angle of Projection**
-**Author:** Your Name  
-**Date:** March 2025  
+### **Investigating the Range as a Function of the Angle of Projection** 
 
 ---
 
