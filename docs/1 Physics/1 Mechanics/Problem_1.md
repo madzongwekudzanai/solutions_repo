@@ -73,3 +73,9 @@ Here, we use **ODE solvers** to simulate projectile motion with drag.
 ## **4. Interactive Simulation**
 
 This section adds [sliders](https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5) for interactive tuning of launch parameters.
+
+---
+
+## **5. Launch from Different Heights**
+
+We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation.
