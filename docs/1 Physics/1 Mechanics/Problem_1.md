@@ -1,5 +1,3 @@
-# Problem 1
-
 # **Projectile Motion Analysis and Simulation**
 
 ### **Investigating the Range as a Function of the Angle of Projection**
@@ -59,3 +57,11 @@ The equations of motion then become **nonlinear differential equations**, which 
 This section plots **range vs. launch angle** without air resistance.
 
 ![range vs. launch angle](analytical_analysis_of_range.png)
+
+---
+
+## **3. Numerical Simulation with Air Resistance**
+
+Here, we use **ODE solvers** to simulate projectile motion with drag.
+
+![ODE solvers](numerical_sumulation_with_air_resistance.png)
