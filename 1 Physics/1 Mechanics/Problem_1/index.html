@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Projectile Motion Analysis and Simulation - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Projectile Motion Analysis and Simulation";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,8 +46,22 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Projectile Motion Analysis and Simulation</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#11-equations-of-motion">1.1 Equations of Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#12-effects-of-air-resistance">1.2 Effects of Air Resistance</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-analytical-analysis-of-range">2. Analytical Analysis of Range</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-numerical-simulation-with-air-resistance">3. Numerical Simulation with Air Resistance</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -111,7 +125,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Projectile Motion Analysis and Simulation</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -119,7 +133,6 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
 <h1 id="projectile-motion-analysis-and-simulation"><strong>Projectile Motion Analysis and Simulation</strong></h1>
 <h3 id="investigating-the-range-as-a-function-of-the-angle-of-projection"><strong>Investigating the Range as a Function of the Angle of Projection</strong></h3>
 <hr/>
@@ -166,6 +179,10 @@ F_d = \frac{1}{2} C_d \rho A v^2
 <h2 id="2-analytical-analysis-of-range"><strong>2. Analytical Analysis of Range</strong></h2>
 <p>This section plots <strong>range vs. launch angle</strong> without air resistance.</p>
 <p><img alt="range vs. launch angle" src="../analytical_analysis_of_range.png"/></p>
+<hr/>
+<h2 id="3-numerical-simulation-with-air-resistance"><strong>3. Numerical Simulation with Air Resistance</strong></h2>
+<p>Here, we use <strong>ODE solvers</strong> to simulate projectile motion with drag.</p>
+<p><img alt="ODE solvers" src="../numerical_sumulation_with_air_resistance.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
