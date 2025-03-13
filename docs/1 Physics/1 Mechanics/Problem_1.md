@@ -1,3 +1,5 @@
+# Problem 1
+
 # **Projectile Motion Analysis and Simulation**
 
 ### **Investigating the Range as a Function of the Angle of Projection**
@@ -65,3 +67,9 @@ This section plots **range vs. launch angle** without air resistance.
 Here, we use **ODE solvers** to simulate projectile motion with drag.
 
 ![ODE solvers](numerical_sumulation_with_air_resistance.png)
+
+---
+
+## **4. Interactive Simulation**
+
+This section adds [sliders](https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5) for interactive tuning of launch parameters.
