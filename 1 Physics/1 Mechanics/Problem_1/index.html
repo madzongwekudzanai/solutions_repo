@@ -165,30 +165,7 @@ F_d = \frac{1}{2} C_d \rho A v^2
 <hr/>
 <h2 id="2-analytical-analysis-of-range"><strong>2. Analytical Analysis of Range</strong></h2>
 <p>This section plots <strong>range vs. launch angle</strong> without air resistance.</p>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-# Constants
-g = 9.81  # gravitational acceleration (m/s²)
-v0 = 20   # initial velocity (m/s)
-
-# Angle range (0° to 90°)
-theta = np.linspace(0, 90, 100)
-theta_rad = np.radians(theta)  # Convert to radians
-
-# Compute range
-R = (v0**2 * np.sin(2 * theta_rad)) / g
-
-# Plot range vs. angle
-plt.figure(figsize=(8, 5))
-plt.plot(theta, R, label=f'Initial velocity = {v0} m/s')
-plt.xlabel('Launch Angle (°)')
-plt.ylabel('Range (m)')
-plt.title('Projectile Range vs. Launch Angle')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
+<p><img alt="range vs. launch angle" src="../analytical_analysis_of_range.png"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
