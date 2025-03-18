@@ -120,6 +120,69 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="investigating-the-dynamics-of-a-forced-damped-pendulum">Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The forced damped pendulum is a fascinating example of a system where damping, restoring forces, and external periodic forcing interplay to create rich dynamic behavior. This system exhibits a variety of phenomena, including resonance, chaos, and quasiperiodicity, making it a valuable subject for studying complex real-world systems such as driven oscillators, climate models, and mechanical structures under periodic stress.</p>
+<p>By adjusting parameters like damping, external force amplitude, and driving frequency, the system transitions through different behaviors, such as synchronized oscillations, chaotic motion, and resonance phenomena. Understanding these behaviors has significant implications for fields like energy harvesting, vibration isolation, and mechanical resonance.</p>
+<h2 id="theoretical-foundation">Theoretical Foundation</h2>
+<p>The motion of a forced damped pendulum is governed by the differential equation:</p>
+<div class="arithmatex">\[\frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \sin(\theta) = A \cos(\omega t)\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \theta(t) \)</span> is the angular displacement,</li>
+<li><span class="arithmatex">\( b \)</span> is the damping coefficient,</li>
+<li><span class="arithmatex">\( g \)</span> is the gravitational acceleration,</li>
+<li><span class="arithmatex">\( L \)</span> is the length of the pendulum,</li>
+<li><span class="arithmatex">\( A \)</span> is the amplitude of the external force,</li>
+<li><span class="arithmatex">\( \omega \)</span> is the driving frequency.</li>
+</ul>
+<h3 id="small-angle-approximation">Small-Angle Approximation</h3>
+<p>For small angles, we approximate <span class="arithmatex">\( \sin\theta \approx \theta \)</span>, reducing the equation to:</p>
+<div class="arithmatex">\[\frac{d^2\theta}{dt^2} + b \frac{d\theta}{dt} + \frac{g}{L} \theta = A \cos(\omega t)\]</div>
+<p>This equation describes a forced damped harmonic oscillator with the general solution:</p>
+<div class="arithmatex">\[\theta(t) = \theta_0 e^{-bt/2} \cos(\omega t - \delta)\]</div>
+<p>where <span class="arithmatex">\( \theta_0 \)</span> and <span class="arithmatex">\( \delta \)</span> depend on the system parameters.</p>
+<h3 id="resonance-conditions">Resonance Conditions</h3>
+<p>Resonance occurs when the driving frequency <span class="arithmatex">\( \omega \)</span> matches the natural frequency:</p>
+<div class="arithmatex">\[ \omega_0 = \sqrt{\frac{g}{L}} \]</div>
+<p>At resonance, the amplitude grows significantly unless limited by damping.</p>
+<h2 id="analysis-of-dynamics">Analysis of Dynamics</h2>
+<h3 id="effects-of-parameters">Effects of Parameters</h3>
+<ul>
+<li><strong>Damping coefficient (<span class="arithmatex">\( b \)</span>)</strong>: Higher damping reduces oscillation amplitude and affects stability.</li>
+<li><strong>Driving amplitude (<span class="arithmatex">\( A \)</span>)</strong>: Higher values increase oscillation response and can induce chaotic behavior.</li>
+<li><strong>Driving frequency (<span class="arithmatex">\( \omega \)</span>)</strong>: Near resonance, large oscillations appear, leading to energy amplification.</li>
+</ul>
+<h3 id="transition-to-chaos">Transition to Chaos</h3>
+<p>Beyond simple oscillations, varying <span class="arithmatex">\( b \)</span>, <span class="arithmatex">\( A \)</span>, and <span class="arithmatex">\( \omega \)</span> leads to quasiperiodic or chaotic motion. The transition to chaos can be observed using bifurcation diagrams and Poincaré sections. These chaotic behaviors arise from the system’s sensitivity to initial conditions, a hallmark of deterministic chaos.</p>
+<h2 id="practical-applications">Practical Applications</h2>
+<ul>
+<li><strong>Energy Harvesting</strong>: Used in piezoelectric devices to convert oscillatory motion into electrical energy.</li>
+<li><strong>Suspension Bridges</strong>: Models forced oscillations under periodic forces, such as wind or traffic-induced vibrations.</li>
+<li><strong>Oscillating Circuits</strong>: Analogous to driven RLC circuits, where voltage replaces angular displacement and current replaces velocity.</li>
+<li><strong>Biological Rhythms</strong>: Similar dynamics appear in human gait patterns and circadian rhythms under external influences.</li>
+<li><strong>Seismic Engineering</strong>: Structures subjected to periodic seismic forcing can be analyzed using pendulum models.</li>
+<li><strong>Planetary Motion</strong>: Certain planetary rotational dynamics exhibit nonlinear oscillatory behavior similar to forced pendulums.</li>
+</ul>
+<h2 id="graphical-representations">Graphical Representations</h2>
+<ul>
+<li><strong>Time Series</strong>: Plots of <span class="arithmatex">\( \theta(t) \)</span> to observe periodicity or chaos.
+  <img alt="Time Series" src="../time_series.png"/></li>
+<li><strong>Phase Portraits</strong>: <span class="arithmatex">\( \theta \)</span> vs. <span class="arithmatex">\( \frac{d\theta}{dt} \)</span> to analyze system stability and attractors.
+  <img alt="Phase Portraits" src="../phase_portrait.png"/></li>
+<li><strong>Poincaré Sections</strong>: Used to detect chaotic behavior by sampling system states at discrete time intervals.
+  <img alt="Poincaré Sections" src="../poincare_section.png"/></li>
+<li><strong>Bifurcation Diagrams</strong>: Show transitions to complex motion as system parameters are varied, revealing period-doubling cascades leading to chaos.
+  <img alt="Bifurcation Diagrams" src="../poincare_section.png"/></li>
+<li><strong>Lyapunov Exponents</strong>: Used to quantify chaos by measuring the rate of separation of nearby trajectories.
+  <img alt="Lyapunov Exponents" src="../lyapunov_exponent.png"/></li>
+<li><strong>Fourier Spectra</strong>: Analyzes frequency components of motion to distinguish between periodic, quasiperiodic, and chaotic behavior.
+  <img alt="Fourier Spectra" src="../fourier_spectrum.png"/></li>
+</ul>
+<h2 id="python-simulation">Python Simulation</h2>
+<p>Simulation of the motion of a forced damped pendulum using the Runge-Kutta method and generates multiple plots. <a href="https://colab.research.google.com/drive/1DxEEF3sV84UmsNMD-xvkT1wXUKGnK6xV#scrollTo=h1z8EhVFUSQa" target="_blank">Learn more.</a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This study of the forced damped pendulum provides insight into nonlinear dynamics, resonance, and chaos, with applications in physics and engineering. By using numerical simulations, we can explore a range of behaviors from simple periodic motion to chaotic dynamics, offering deeper understanding and practical implications in various scientific domains. The forced damped pendulum serves as a fundamental model for diverse physical systems, reinforcing the significance of nonlinear dynamics in both theoretical and applied research.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
