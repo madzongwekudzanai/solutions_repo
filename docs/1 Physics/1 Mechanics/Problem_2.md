@@ -73,7 +73,7 @@ Beyond simple oscillations, varying \( b \), \( A \), and \( \omega \) leads to 
 - **Poincaré Sections**: Used to detect chaotic behavior by sampling system states at discrete time intervals.
   ![Poincaré Sections](poincare_section.png)
 - **Bifurcation Diagrams**: Show transitions to complex motion as system parameters are varied, revealing period-doubling cascades leading to chaos.
-  ![Bifurcation Diagrams](poincare_section.png)
+  ![Bifurcation Diagrams](bifurcation_diagram.png)
 - **Lyapunov Exponents**: Used to quantify chaos by measuring the rate of separation of nearby trajectories.
   ![Lyapunov Exponents](lyapunov_exponent.png)
 - **Fourier Spectra**: Analyzes frequency components of motion to distinguish between periodic, quasiperiodic, and chaotic behavior.
