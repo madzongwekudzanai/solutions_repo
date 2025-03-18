@@ -56,7 +56,7 @@ The equations of motion then become **nonlinear differential equations**, which 
 
 ## **2. Analytical Analysis of Range**
 
-This section plots **range vs. launch angle** without air resistance.
+This section plots **range vs. launch angle** without air resistance. <a href="https://colab.research.google.com/drive/1sxZ0hmVo9KCmVdGBfbu7JuImuAKgUyYd#scrollTo=70QY0plaFcA-" target="_blank">Learn more.</a>
 
 ![range vs. launch angle](analytical_analysis_of_range.png)
 
@@ -64,7 +64,7 @@ This section plots **range vs. launch angle** without air resistance.
 
 ## **3. Numerical Simulation with Air Resistance**
 
-Here, we use **ODE solvers** to simulate projectile motion with drag.
+Here, we use **ODE solvers** to simulate projectile motion with drag. <a href="https://colab.research.google.com/drive/1mVflU6NC26PCAmQeVa732XKLAykqwTBU#scrollTo=Z3YGY0DjGQv-" target="_blank">Learn more.</a>
 
 ![ODE solvers](numerical_sumulation_with_air_resistance.png)
 
@@ -72,10 +72,10 @@ Here, we use **ODE solvers** to simulate projectile motion with drag.
 
 ## **4. Interactive Simulation**
 
-This section adds [sliders](https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5) for interactive tuning of launch parameters.
+This section adds **sliders** for interactive tuning of launch parameters. <a href="https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5" target="_blank">Learn more.</a>
 
 ---
 
 ## **5. Launch from Different Heights**
 
-We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation.
+We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation. <a href="https://colab.research.google.com/drive/1puFf49HH7PUNkO4eD5cUrila92r7QgWX#scrollTo=ZBnL01S3HUhj" target="_blank">Learn more.</a>
