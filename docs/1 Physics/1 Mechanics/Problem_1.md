@@ -79,3 +79,5 @@ This section adds **sliders** for interactive tuning of launch parameters. <a hr
 ## **5. Launch from Different Heights**
 
 We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation. <a href="https://colab.research.google.com/drive/1puFf49HH7PUNkO4eD5cUrila92r7QgWX#scrollTo=ZBnL01S3HUhj" target="_blank">Learn more.</a>
+
+![different heights](launch_from_different_height.png)
