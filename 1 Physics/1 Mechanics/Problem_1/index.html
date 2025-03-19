@@ -126,34 +126,50 @@
 <h2 id="1-theoretical-foundation"><strong>1. Theoretical Foundation</strong></h2>
 <p>Projectile motion follows Newton’s laws of motion. We analyze the motion by separating it into horizontal and vertical components.</p>
 <h3 id="11-equations-of-motion"><strong>1.1 Equations of Motion</strong></h3>
-<p>The motion of a projectile launched with initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> is governed by:</p>
+<p>The motion of a projectile launched with an initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> is governed by the fundamental kinematic equations.</p>
+<h4 id="111-horizontal-motion"><strong>1.1.1 Horizontal Motion</strong></h4>
+<p>Since there is no horizontal acceleration (neglecting air resistance), the horizontal displacement is given by:</p>
+<div class="arithmatex">\[ x = v_0 \cos(\theta) t \]</div>
+<p>where:</p>
 <ul>
-<li><strong>Horizontal motion (constant velocity)</strong>
-  $$
-  x = v_0 \cos(\theta) t
-  $$</li>
-<li><strong>Vertical motion (accelerated due to gravity)</strong>
-  $$
-  y = v_0 \sin(\theta) t - \frac{1}{2} g t^2
-  $$</li>
-<li><strong>Time of flight (when <span class="arithmatex">\( y = 0 \)</span>)</strong>
-  $$
-  t_f = \frac{2 v_0 \sin(\theta)}{g}
-  $$</li>
-<li><strong>Range of projectile</strong>
-  $$
-  R = \frac{v_0^2 \sin(2\theta)}{g}
-  $$</li>
-<li><strong>Maximum height</strong>
-  $$
-  H = \frac{v_0^2 \sin^2(\theta)}{2g}
-  $$</li>
+<li><span class="arithmatex">\( x \)</span> = horizontal displacement</li>
+<li><span class="arithmatex">\( v_0 \)</span> = initial velocity</li>
+<li><span class="arithmatex">\( \theta \)</span> = launch angle</li>
+<li><span class="arithmatex">\( t \)</span> = time</li>
 </ul>
-<h3 id="12-effects-of-air-resistance"><strong>1.2 Effects of Air Resistance</strong></h3>
-<p>Without air resistance, projectiles follow a <strong>parabolic trajectory</strong>. However, with air resistance, the motion is more complex because drag opposes velocity. The drag force is given by:</p>
-<div class="arithmatex">\[
-F_d = \frac{1}{2} C_d \rho A v^2
-\]</div>
+<h4 id="112-vertical-motion"><strong>1.1.2 Vertical Motion</strong></h4>
+<p>The vertical motion is influenced by gravity <span class="arithmatex">\( g \)</span>, leading to the equation:</p>
+<div class="arithmatex">\[ y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( y \)</span> = vertical displacement</li>
+<li><span class="arithmatex">\( g \)</span> = acceleration due to gravity (9.81 m/s²)</li>
+</ul>
+<h3 id="12-derivation-of-key-equations"><strong>1.2 Derivation of Key Equations</strong></h3>
+<h4 id="121-time-of-flight"><strong>1.2.1 Time of Flight</strong></h4>
+<p>The total time of flight occurs when the projectile returns to the ground (i.e., <span class="arithmatex">\( y = 0 \)</span>). Setting the vertical displacement equation to zero:</p>
+<div class="arithmatex">\[ 0 = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
+<p>Factoring out <span class="arithmatex">\( t \)</span>:</p>
+<div class="arithmatex">\[ t (v_0 \sin(\theta) - \frac{1}{2} g t) = 0 \]</div>
+<p>Solving for <span class="arithmatex">\( t \)</span>:</p>
+<div class="arithmatex">\[ t_f = \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<h4 id="122-range-of-the-projectile"><strong>1.2.2 Range of the Projectile</strong></h4>
+<p>The range <span class="arithmatex">\( R \)</span> is the horizontal distance traveled before the projectile lands:</p>
+<div class="arithmatex">\[ R = v_0 \cos(\theta) t_f \]</div>
+<p>Substituting <span class="arithmatex">\( t_f \)</span> from above:</p>
+<div class="arithmatex">\[ R = v_0 \cos(\theta) \times \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<p>Using the trigonometric identity <span class="arithmatex">\( 2 \sin(\theta) \cos(\theta) = \sin(2\theta) \)</span>, we get:</p>
+<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
+<h4 id="123-maximum-height"><strong>1.2.3 Maximum Height</strong></h4>
+<p>At the peak, the vertical velocity is zero <span class="arithmatex">\( (v_y = 0) \)</span>. Using the kinematic equation:</p>
+<div class="arithmatex">\[ v_y^2 = v_0^2 \sin^2(\theta) - 2 g H \]</div>
+<p>Setting <span class="arithmatex">\( v_y = 0 \)</span>:</p>
+<div class="arithmatex">\[ 0 = v_0^2 \sin^2(\theta) - 2 g H \]</div>
+<p>Solving for <span class="arithmatex">\( H \)</span>:</p>
+<div class="arithmatex">\[ H = \frac{v_0^2 \sin^2(\theta)}{2g} \]</div>
+<h3 id="13-effects-of-air-resistance"><strong>1.3 Effects of Air Resistance</strong></h3>
+<p>Without air resistance, projectiles follow a <strong>parabolic trajectory</strong>. However, with air resistance, the motion becomes more complex due to a drag force <span class="arithmatex">\( F_d \)</span>, given by:</p>
+<div class="arithmatex">\[ F_d = \frac{1}{2} C_d \rho A v^2 \]</div>
 <p>where:</p>
 <ul>
 <li><span class="arithmatex">\( C_d \)</span> = drag coefficient (depends on object shape)</li>
@@ -161,7 +177,151 @@ F_d = \frac{1}{2} C_d \rho A v^2
 <li><span class="arithmatex">\( A \)</span> = cross-sectional area (m²)</li>
 <li><span class="arithmatex">\( v \)</span> = velocity (m/s)</li>
 </ul>
-<p>The equations of motion then become <strong>nonlinear differential equations</strong>, which we solve numerically.</p>
+<h3 id="14-numerical-computation-with-air-resistance"><strong>1.4 Numerical Computation with Air Resistance</strong></h3>
+<p>With air resistance, the equations of motion become nonlinear differential equations:</p>
+<h4 id="141-horizontal-motion-with-drag"><strong>1.4.1 Horizontal Motion with Drag</strong></h4>
+<div class="arithmatex">\[ m \frac{dv_x}{dt} = -\frac{1}{2} C_d \rho A v v_x \]</div>
+<h4 id="142-vertical-motion-with-drag"><strong>1.4.2 Vertical Motion with Drag</strong></h4>
+<div class="arithmatex">\[ m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y \]</div>
+<p>where <span class="arithmatex">\( v_x \)</span> and <span class="arithmatex">\( v_y \)</span> are the horizontal and vertical velocity components. These equations require numerical methods (such as Euler’s method or Runge-Kutta) for solving.</p>
+<h3 id="15-summary-of-important-equations"><strong>1.5 Summary of Important Equations</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horizontal Position</td>
+<td><span class="arithmatex">\( x = v_0 \cos(\theta) t \)</span></td>
+</tr>
+<tr>
+<td>Vertical Position</td>
+<td><span class="arithmatex">\( y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \)</span></td>
+</tr>
+<tr>
+<td>Time of Flight</td>
+<td><span class="arithmatex">\( t_f = \frac{2 v_0 \sin(\theta)}{g} \)</span></td>
+</tr>
+<tr>
+<td>Range</td>
+<td><span class="arithmatex">\( R = \frac{v_0^2 \sin(2\theta)}{g} \)</span></td>
+</tr>
+<tr>
+<td>Maximum Height</td>
+<td><span class="arithmatex">\( H = \frac{v_0^2 \sin^2(\theta)}{2g} \)</span></td>
+</tr>
+<tr>
+<td>Drag Force</td>
+<td><span class="arithmatex">\( F_d = \frac{1}{2} C_d \rho A v^2 \)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p>This expanded Markdown document provides a thorough derivation of the projectile motion equations and introduces air resistance effects, setting the stage for computational simulations.</p>
+<h1 id="projectile-motion-analysis-and-simulation_1"><strong>Projectile Motion Analysis and Simulation</strong></h1>
+<h3 id="investigating-the-range-as-a-function-of-the-angle-of-projection_1"><strong>Investigating the Range as a Function of the Angle of Projection</strong></h3>
+<hr/>
+<h2 id="1-theoretical-foundation_1"><strong>1. Theoretical Foundation</strong></h2>
+<p>Projectile motion follows Newton’s laws of motion. We analyze the motion by separating it into horizontal and vertical components.</p>
+<h3 id="11-equations-of-motion_1"><strong>1.1 Equations of Motion</strong></h3>
+<p>The motion of a projectile launched with an initial velocity <span class="arithmatex">\( v_0 \)</span> at an angle <span class="arithmatex">\( \theta \)</span> is governed by the fundamental kinematic equations.</p>
+<h4 id="111-horizontal-motion_1"><strong>1.1.1 Horizontal Motion</strong></h4>
+<p>Since there is no horizontal acceleration (neglecting air resistance), the horizontal displacement is given by:</p>
+<div class="arithmatex">\[ x = v_0 \cos(\theta) t \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( x \)</span> = horizontal displacement</li>
+<li><span class="arithmatex">\( v_0 \)</span> = initial velocity</li>
+<li><span class="arithmatex">\( \theta \)</span> = launch angle</li>
+<li><span class="arithmatex">\( t \)</span> = time</li>
+</ul>
+<h4 id="112-vertical-motion_1"><strong>1.1.2 Vertical Motion</strong></h4>
+<p>The vertical motion is influenced by gravity <span class="arithmatex">\( g \)</span>, leading to the equation:</p>
+<div class="arithmatex">\[ y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( y \)</span> = vertical displacement</li>
+<li><span class="arithmatex">\( g \)</span> = acceleration due to gravity (9.81 m/s²)</li>
+</ul>
+<h3 id="12-derivation-of-key-equations_1"><strong>1.2 Derivation of Key Equations</strong></h3>
+<h4 id="121-time-of-flight_1"><strong>1.2.1 Time of Flight</strong></h4>
+<p>The total time of flight occurs when the projectile returns to the ground (i.e., <span class="arithmatex">\( y = 0 \)</span>). Setting the vertical displacement equation to zero:</p>
+<div class="arithmatex">\[ 0 = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \]</div>
+<p>Factoring out <span class="arithmatex">\( t \)</span>:</p>
+<div class="arithmatex">\[ t (v_0 \sin(\theta) - \frac{1}{2} g t) = 0 \]</div>
+<p>Solving for <span class="arithmatex">\( t \)</span>:</p>
+<div class="arithmatex">\[ t_f = \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<h4 id="122-range-of-the-projectile_1"><strong>1.2.2 Range of the Projectile</strong></h4>
+<p>The range <span class="arithmatex">\( R \)</span> is the horizontal distance traveled before the projectile lands:</p>
+<div class="arithmatex">\[ R = v_0 \cos(\theta) t_f \]</div>
+<p>Substituting <span class="arithmatex">\( t_f \)</span> from above:</p>
+<div class="arithmatex">\[ R = v_0 \cos(\theta) \times \frac{2 v_0 \sin(\theta)}{g} \]</div>
+<p>Using the trigonometric identity <span class="arithmatex">\( 2 \sin(\theta) \cos(\theta) = \sin(2\theta) \)</span>, we get:</p>
+<div class="arithmatex">\[ R = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
+<h4 id="123-maximum-height_1"><strong>1.2.3 Maximum Height</strong></h4>
+<p>At the peak, the vertical velocity is zero <span class="arithmatex">\( (v_y = 0) \)</span>. Using the kinematic equation:</p>
+<div class="arithmatex">\[ v_y^2 = v_0^2 \sin^2(\theta) - 2 g H \]</div>
+<p>Setting <span class="arithmatex">\( v_y = 0 \)</span>:</p>
+<div class="arithmatex">\[ 0 = v_0^2 \sin^2(\theta) - 2 g H \]</div>
+<p>Solving for <span class="arithmatex">\( H \)</span>:</p>
+<div class="arithmatex">\[ H = \frac{v_0^2 \sin^2(\theta)}{2g} \]</div>
+<h3 id="13-effects-of-air-resistance_1"><strong>1.3 Effects of Air Resistance</strong></h3>
+<p>Without air resistance, projectiles follow a <strong>parabolic trajectory</strong>. However, with air resistance, the motion becomes more complex due to a drag force <span class="arithmatex">\( F_d \)</span>, given by:</p>
+<div class="arithmatex">\[ F_d = \frac{1}{2} C_d \rho A v^2 \]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( C_d \)</span> = drag coefficient (depends on object shape)</li>
+<li><span class="arithmatex">\( \rho \)</span> = air density (kg/m³)</li>
+<li><span class="arithmatex">\( A \)</span> = cross-sectional area (m²)</li>
+<li><span class="arithmatex">\( v \)</span> = velocity (m/s)</li>
+</ul>
+<h3 id="14-numerical-computation-with-air-resistance_1"><strong>1.4 Numerical Computation with Air Resistance</strong></h3>
+<p>With air resistance, the equations of motion become nonlinear differential equations:</p>
+<h4 id="141-horizontal-motion-with-drag_1"><strong>1.4.1 Horizontal Motion with Drag</strong></h4>
+<div class="arithmatex">\[ m \frac{dv_x}{dt} = -\frac{1}{2} C_d \rho A v v_x \]</div>
+<h4 id="142-vertical-motion-with-drag_1"><strong>1.4.2 Vertical Motion with Drag</strong></h4>
+<div class="arithmatex">\[ m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y \]</div>
+<p>where <span class="arithmatex">\( v_x \)</span> and <span class="arithmatex">\( v_y \)</span> are the horizontal and vertical velocity components. These equations require numerical methods (such as Euler’s method or Runge-Kutta) for solving.</p>
+<h3 id="15-summary-of-important-equations_1"><strong>1.5 Summary of Important Equations</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Horizontal Position</td>
+<td><span class="arithmatex">\( x = v_0 \cos(\theta) t \)</span></td>
+</tr>
+<tr>
+<td>Vertical Position</td>
+<td><span class="arithmatex">\( y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \)</span></td>
+</tr>
+<tr>
+<td>Time of Flight</td>
+<td><span class="arithmatex">\( t_f = \frac{2 v_0 \sin(\theta)}{g} \)</span></td>
+</tr>
+<tr>
+<td>Range</td>
+<td><span class="arithmatex">\( R = \frac{v_0^2 \sin(2\theta)}{g} \)</span></td>
+</tr>
+<tr>
+<td>Maximum Height</td>
+<td><span class="arithmatex">\( H = \frac{v_0^2 \sin^2(\theta)}{2g} \)</span></td>
+</tr>
+<tr>
+<td>Drag Force</td>
+<td><span class="arithmatex">\( F_d = \frac{1}{2} C_d \rho A v^2 \)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p>This expanded Markdown document provides a thorough derivation of the projectile motion equations and introduces air resistance effects, setting the stage for computational simulations.</p>
 <hr/>
 <h2 id="2-analytical-analysis-of-range"><strong>2. Analytical Analysis of Range</strong></h2>
 <p>This section plots <strong>range vs. launch angle</strong> without air resistance. <a href="https://colab.research.google.com/drive/1sxZ0hmVo9KCmVdGBfbu7JuImuAKgUyYd#scrollTo=70QY0plaFcA-" target="_blank">Learn more.</a></p>
