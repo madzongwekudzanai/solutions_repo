@@ -66,23 +66,117 @@ Beyond simple oscillations, varying \( b \), \( A \), and \( \omega \) leads to 
 
 ## Graphical Representations
 
-- **Time Series**: Plots of \( \theta(t) \) to observe periodicity or chaos.
-  ![Time Series](time_series.png)
+- **Time Series**: Plots of \( \theta(t) \) to observe periodicity or chaos. <a href="https://colab.research.google.com/drive/1bj51sHI9Xlik4Y6hWdOUKXCk4eS9XUBJ#scrollTo=4wrl1_4bTDLt" target="_blank">Learn more.</a>
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def forced_damped_pendulum(t, y, b, g, L, A, omega_d):
+    """ODE system for a forced damped pendulum."""
+    theta, omega = y  # omega represents angular velocity (dtheta/dt)
+    dtheta_dt = omega
+    domega_dt = -b * omega - (g/L) * np.sin(theta) + A * np.cos(omega_d * t)  # Corrected force term
+
+    return [dtheta_dt, domega_dt]
+# Parameters
+g = 9.81  # Gravity (m/s^2)
+L = 1.0   # Length of pendulum (m)
+y0 = [np.pi / 4, 0]  # Initial angle = 45 degrees, initial velocity = 0
+
+# Different parameter sets to compare
+cases = [
+    {"b": 0.2, "A": 1.0, "omega_d": 1.5, "label": "b=0.2, A=1.0, ω=1.5"},
+    {"b": 0.5, "A": 1.2, "omega_d": 2.0, "label": "b=0.5, A=1.2, ω=2.0"},
+    {"b": 0.8, "A": 1.5, "omega_d": 2.5, "label": "b=0.8, A=1.5, ω=2.5"},
+]
+
+# Time range
+t_span = (0, 50)
+t_eval = np.linspace(t_span[0], t_span[1], 1000)
+
+plt.figure(figsize=(12, 7.5))
+
+# Solve and plot for different cases
+for case in cases:
+    sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval,
+                     args=(case["b"], g, L, case["A"], case["omega_d"]))
+    plt.plot(sol.t, sol.y[0], label=case["label"])
+
+# Formatting the plot
+plt.xlabel('Time (s)')
+plt.ylabel('Angle (radians)')
+plt.title('Forced Damped Pendulum Motion (Multiple Instances)')
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+![Time Series](time_series.png)
+
 - **Phase Portraits**: \( \theta \) vs. \( \frac{d\theta}{dt} \) to analyze system stability and attractors.
-  ![Phase Portraits](phase_portrait.png)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def forced_damped_pendulum(t, y, b, g, L, A, omega):
+    """ODE system for a forced damped pendulum."""
+    theta, omega_dot = y
+    dtheta_dt = omega_dot
+    domega_dt = -b * omega_dot - (g/L) * np.sin(theta) + A * np.cos(omega * t)
+    return [dtheta_dt, domega_dt]
+
+# Parameters
+g = 9.81  # Gravity (m/s²)
+L = 1.0   # Length of pendulum (m)
+y0 = [np.pi / 4, 0]  # Initial angle = 45 degrees, initial velocity = 0
+
+# Different parameter sets to compare
+cases = [
+    {"b": 0.2, "A": 1.0, "omega": 1.5, "color": "r", "label": "b=0.2, A=1.0, ω=1.5"},
+    {"b": 0.5, "A": 1.2, "omega": 2.0, "color": "b", "label": "b=0.5, A=1.2, ω=2.0"},
+    {"b": 0.8, "A": 1.5, "omega": 2.5, "color": "g", "label": "b=0.8, A=1.5, ω=2.5"},
+]
+
+# Time range
+t_span = (0, 50)
+t_eval = np.linspace(t_span[0], t_span[1], 1000)
+
+plt.figure(figsize=(12, 7.5))
+
+# Solve and plot for different cases
+for case in cases:
+    sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval,
+                     args=(case["b"], g, L, case["A"], case["omega"]))
+
+    plt.plot(sol.y[0], sol.y[1], color=case["color"], label=case["label"])
+
+# Formatting
+plt.xlabel('Theta (angle)')
+plt.ylabel('Angular Velocity')
+plt.title('Phase Portrait of Forced Damped Pendulum')
+plt.legend()
+plt.grid(True)
+
+plt.show()
+```
+
+![Phase Portraits](phase_portrait.png)
+
 - **Poincaré Sections**: Used to detect chaotic behavior by sampling system states at discrete time intervals.
   ![Poincaré Sections](poincare_section.png)
 - **Bifurcation Diagrams**: Show transitions to complex motion as system parameters are varied, revealing period-doubling cascades leading to chaos.
   ![Bifurcation Diagrams](bifurcation_diagram.png)
 - **Lyapunov Exponents**: Used to quantify chaos by measuring the rate of separation of nearby trajectories.
   ![Lyapunov Exponents](lyapunov_exponent.png)
-- **Fourier Spectra**: Analyzes frequency components of motion to distinguish between periodic, quasiperiodic, and chaotic behavior.
-  ![Fourier Spectra](fourier_spectrum.png)
-
-## Python Simulation
-
-Simulation of the motion of a forced damped pendulum using the Runge-Kutta method and generates multiple plots. <a href="https://colab.research.google.com/drive/1DxEEF3sV84UmsNMD-xvkT1wXUKGnK6xV#scrollTo=h1z8EhVFUSQa" target="_blank">Learn more.</a>
 
 ## Conclusion
 
 This study of the forced damped pendulum provides insight into nonlinear dynamics, resonance, and chaos, with applications in physics and engineering. By using numerical simulations, we can explore a range of behaviors from simple periodic motion to chaotic dynamics, offering deeper understanding and practical implications in various scientific domains. The forced damped pendulum serves as a fundamental model for diverse physical systems, reinforcing the significance of nonlinear dynamics in both theoretical and applied research.
+
+```
+
+```
