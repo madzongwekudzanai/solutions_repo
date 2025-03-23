@@ -68,6 +68,8 @@ Beyond simple oscillations, varying \( b \), \( A \), and \( \omega \) leads to 
 
 - **Time Series**: Plots of \( \theta(t) \) to observe periodicity or chaos. <a href="https://colab.research.google.com/drive/1bj51sHI9Xlik4Y6hWdOUKXCk4eS9XUBJ#scrollTo=4wrl1_4bTDLt" target="_blank">Learn more.</a>
 
+![Time Series](time_series.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -113,9 +115,9 @@ plt.grid(True)
 plt.show()
 ```
 
-![Time Series](time_series.png)
-
 - **Phase Portraits**: \( \theta \) vs. \( \frac{d\theta}{dt} \) to analyze system stability and attractors.
+
+![Phase Portraits](phase_portrait.png)
 
 ```python
 import numpy as np
@@ -163,8 +165,6 @@ plt.grid(True)
 
 plt.show()
 ```
-
-![Phase Portraits](phase_portrait.png)
 
 - **Poincaré Sections**: Used to detect chaotic behavior by sampling system states at discrete time intervals.
   ![Poincaré Sections](poincare_section.png)

@@ -124,6 +124,10 @@ where \( v_x \) and \( v_y \) are the horizontal and vertical velocity component
 
 ## **2. Analytical Analysis of Range**
 
+This section plots **range vs. launch angle** without air resistance. <a href="https://colab.research.google.com/drive/1sxZ0hmVo9KCmVdGBfbu7JuImuAKgUyYd#scrollTo=70QY0plaFcA-" target="_blank">Learn more.</a>
+
+![range vs. launch angle](analytical_analysis_of_range.png)
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -150,13 +154,13 @@ plt.grid()
 plt.show()
 ```
 
-This section plots **range vs. launch angle** without air resistance. <a href="https://colab.research.google.com/drive/1sxZ0hmVo9KCmVdGBfbu7JuImuAKgUyYd#scrollTo=70QY0plaFcA-" target="_blank">Learn more.</a>
-
-![range vs. launch angle](analytical_analysis_of_range.png)
-
 ---
 
 ## **3. Numerical Simulation with Air Resistance**
+
+Here, we use **ODE solvers** to simulate projectile motion with drag. <a href="https://colab.research.google.com/drive/1mVflU6NC26PCAmQeVa732XKLAykqwTBU#scrollTo=Z3YGY0DjGQv-" target="_blank">Learn more.</a>
+
+![ODE solvers](numerical_sumulation_with_air_resistance.png)
 
 ```python
 import numpy as np
@@ -217,13 +221,11 @@ def plot_trajectory(arr_args):
 plot_trajectory([(40, 45, 0.47), (40, 45, 0.2), (40, 45, 0.1), (40, 40, 0.47), (40, 30, 0.47), (40, 20, 0.47), (30, 40, 0.47), (20, 40, 0.47), (15, 40, 0.47)])
 ```
 
-Here, we use **ODE solvers** to simulate projectile motion with drag. <a href="https://colab.research.google.com/drive/1mVflU6NC26PCAmQeVa732XKLAykqwTBU#scrollTo=Z3YGY0DjGQv-" target="_blank">Learn more.</a>
-
-![ODE solvers](numerical_sumulation_with_air_resistance.png)
-
 ---
 
 ## **4. Interactive Simulation**
+
+This section adds **sliders** for interactive tuning of launch parameters. <a href="https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5" target="_blank">Learn more.</a>
 
 ```python
 import numpy as np
@@ -291,11 +293,13 @@ ui = widgets.VBox([v0_slider, theta_slider, Cd_slider])
 display(ui, out)
 ```
 
-This section adds **sliders** for interactive tuning of launch parameters. <a href="https://colab.research.google.com/drive/1GlJbqtlKH8E3AgUMlgDzl-D4lrUWxCb5" target="_blank">Learn more.</a>
-
 ---
 
 ## **5. Launch from Different Heights**
+
+We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation. <a href="https://colab.research.google.com/drive/1puFf49HH7PUNkO4eD5cUrila92r7QgWX#scrollTo=ZBnL01S3HUhj" target="_blank">Learn more.</a>
+
+![different heights](launch_from_different_height.png)
 
 ```python
 import numpy as np
@@ -353,7 +357,3 @@ def plot_trajectory(para_list):
 # Example: Launch from different height
 plot_trajectory([(20, 45, 0.47, 3), (20, 45, 0.47, 6), (20, 45, 0.47, 9), (20, 45, 0.47, 12)])
 ```
-
-We modify our simulation to allow for launch at y₀≠0. This affects the time of flight calculation. <a href="https://colab.research.google.com/drive/1puFf49HH7PUNkO4eD5cUrila92r7QgWX#scrollTo=ZBnL01S3HUhj" target="_blank">Learn more.</a>
-
-![different heights](launch_from_different_height.png)
