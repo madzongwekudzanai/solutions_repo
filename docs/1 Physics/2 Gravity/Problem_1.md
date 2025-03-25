@@ -43,33 +43,33 @@ Kepler's laws were originally based on **empirical observations**, but in 1687, 
 
 Newton’s version of **Kepler’s Third Law** can be derived using **Newton’s Law of Universal Gravitation** and **centripetal force**.
 
-1. The **gravitational force** acting on a planet of mass $m$ is:
+1.The **gravitational force** acting on a planet of mass $m$ is:
 
-   $$ F_g = \frac{GMm}{r^2} $$
+$$ F_g = \frac{GMm}{r^2} $$
 
-2. The **centripetal force** required for circular motion is:
+2.The **centripetal force** required for circular motion is:
 
-   $$ F_c = \frac{m v^2}{r} $$
+$$ F_c = \frac{m v^2}{r} $$
 
-3. Since the gravitational force provides the necessary centripetal force:
+3.Since the gravitational force provides the necessary centripetal force:
 
-   $$ \frac{GMm}{r^2} = \frac{m v^2}{r} $$
+$$ \frac{GMm}{r^2} = \frac{m v^2}{r} $$
 
-4. Expressing velocity in terms of the orbital period:
+4.Expressing velocity in terms of the orbital period:
 
-   $$ v = \frac{2\pi r}{T} $$
+$$ v = \frac{2\pi r}{T} $$
 
-   Substituting this into the equation:
+Substituting this into the equation:
 
-   $$ \frac{GMm}{r^2} = \frac{m (2\pi r / T)^2}{r} $$
+$$ \frac{GMm}{r^2} = \frac{m (2\pi r / T)^2}{r} $$
 
-5. Simplifying:
+5.Simplifying:
 
-   $$ GM = \frac{4\pi^2 r^3}{T^2} $$
+$$ GM = \frac{4\pi^2 r^3}{T^2} $$
 
-6. Solving for $T^2$:
+6.Solving for $T^2$:
 
-   $$ T^2 = \frac{4\pi^2 r^3}{GM} $$
+$$ T^2 = \frac{4\pi^2 r^3}{GM} $$
 
 This is the **modern Newtonian form of Kepler’s Third Law**, showing that the **orbital period squared** is proportional to the **orbital radius cubed**.
 
