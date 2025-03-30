@@ -82,16 +82,19 @@ def forced_damped_pendulum(t, y, b, g, L, A, omega_d):
     domega_dt = -b * omega - (g/L) * np.sin(theta) + A * np.cos(omega_d * t)  # Corrected force term
 
     return [dtheta_dt, domega_dt]
+
 # Parameters
 g = 9.81  # Gravity (m/s^2)
 L = 1.0   # Length of pendulum (m)
 y0 = [np.pi / 4, 0]  # Initial angle = 45 degrees, initial velocity = 0
 
-# Different parameter sets to compare
+# Five distinct parameter sets to compare
 cases = [
     {"b": 0.2, "A": 1.0, "omega_d": 1.5, "label": "b=0.2, A=1.0, ω=1.5"},
     {"b": 0.5, "A": 1.2, "omega_d": 2.0, "label": "b=0.5, A=1.2, ω=2.0"},
     {"b": 0.8, "A": 1.5, "omega_d": 2.5, "label": "b=0.8, A=1.5, ω=2.5"},
+    {"b": 0.3, "A": 2.0, "omega_d": 0.5, "label": "b=0.3, A=2.0, ω=0.5"},  # Moderate damping, low frequency
+    {"b": 0.7, "A": 1.8, "omega_d": 1.8, "label": "b=0.7, A=1.8, ω=1.8"},  # Strong damping, medium frequency
 ]
 
 # Time range
@@ -100,7 +103,7 @@ t_eval = np.linspace(t_span[0], t_span[1], 1000)
 
 plt.figure(figsize=(12, 7.5))
 
-# Solve and plot for different cases
+# Solve and plot for the 5 cases
 for case in cases:
     sol = solve_ivp(forced_damped_pendulum, t_span, y0, t_eval=t_eval,
                      args=(case["b"], g, L, case["A"], case["omega_d"]))
@@ -109,7 +112,7 @@ for case in cases:
 # Formatting the plot
 plt.xlabel('Time (s)')
 plt.ylabel('Angle (radians)')
-plt.title('Forced Damped Pendulum Motion (Multiple Instances)')
+plt.title('Forced Damped Pendulum Motion (5 Cases)')
 plt.legend()
 plt.grid(True)
 plt.show()
@@ -166,17 +169,6 @@ plt.grid(True)
 plt.show()
 ```
 
-- **Poincaré Sections**: Used to detect chaotic behavior by sampling system states at discrete time intervals.
-  ![Poincaré Sections](poincare_section.png)
-- **Bifurcation Diagrams**: Show transitions to complex motion as system parameters are varied, revealing period-doubling cascades leading to chaos.
-  ![Bifurcation Diagrams](bifurcation_diagram.png)
-- **Lyapunov Exponents**: Used to quantify chaos by measuring the rate of separation of nearby trajectories.
-  ![Lyapunov Exponents](lyapunov_exponent.png)
-
 ## Conclusion
 
 This study of the forced damped pendulum provides insight into nonlinear dynamics, resonance, and chaos, with applications in physics and engineering. By using numerical simulations, we can explore a range of behaviors from simple periodic motion to chaotic dynamics, offering deeper understanding and practical implications in various scientific domains. The forced damped pendulum serves as a fundamental model for diverse physical systems, reinforcing the significance of nonlinear dynamics in both theoretical and applied research.
-
-```
-
-```

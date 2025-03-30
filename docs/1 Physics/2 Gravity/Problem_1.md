@@ -1,35 +1,106 @@
+Here’s an edited version of the content where the derivations of Kepler’s Third Law come first, before the explanation and applications:
+
+---
+
 # Problem 1
 
 # Orbital Period and Orbital Radius: Kepler's Third Law
 
-## Introduction
+## Derivation of Kepler's Third Law
 
-The study of planetary motion has played a significant role in the development of astronomy and physics. Before Newton's laws of motion, astronomers relied on empirical observations to describe the movement of celestial bodies. One of the most important contributions in this field was made by **Johannes Kepler**, who formulated three laws of planetary motion.
+Kepler’s Third Law establishes a relationship between the orbital period of a planet (or any object) and its distance from the central body it orbits. To understand how this law works, we derive it from fundamental principles of physics.
 
-Among these, **Kepler’s Third Law** provides a crucial relationship between the **orbital period** and **orbital radius** of a planet:
+### 1. Gravitational Force
 
-$$ T^2 \propto r^3 $$
+The **gravitational force** acting on a planet of mass \( m \), which is at a distance \( r \) from the central body, is given by:
 
-This means that if we know the distance of a celestial object from the central body it orbits, we can predict its orbital period. This law applies to **any object in a stable orbit**, including planets, moons, and artificial satellites.
+\[
+F_g = \frac{GMm}{r^2}
+\]
 
-Mathematically, the law is written as:
+Where:
 
-$$ T^2 = \frac{4\pi^2 r^3}{GM} $$
+- \( F_g \) is the gravitational force (in newtons),
+- \( G \) is the gravitational constant (\(6.67430 \times 10^{-11} \, m^3 kg^{-1} s^{-2}\)),
+- \( M \) is the mass of the central body (in kg),
+- \( r \) is the distance from the center of the central body (in meters),
+- \( m \) is the mass of the orbiting object.
 
-where:
+### 2. Centripetal Force
 
-| Symbol | Description                                                              |
-| ------ | ------------------------------------------------------------------------ |
-| $T$    | Orbital period (seconds)                                                 |
-| $r$    | Orbital radius (meters)                                                  |
-| $G$    | Gravitational constant ($6.67430 \times 10^{-11} \, m^3 kg^{-1} s^{-2}$) |
-| $M$    | Mass of the central body (kg)                                            |
+The object needs a **centripetal force** to keep it in orbit. The centripetal force is provided by gravity, and it can be expressed as:
 
-This equation reveals that **larger orbital radii correspond to longer orbital periods**, governing planetary motion in the Solar System and beyond.
+\[
+F_c = \frac{m v^2}{r}
+\]
 
-## Historical Background
+Where:
 
-In 1609, **Johannes Kepler** formulated three laws of planetary motion based on observational data collected by **Tycho Brahe**. These laws describe how planets move in elliptical orbits, how their speed varies, and the relationship between their orbital period and distance from the Sun.
+- \( F_c \) is the centripetal force (in newtons),
+- \( v \) is the orbital velocity of the object.
+
+### 3. Equating the Forces
+
+For a circular orbit, the gravitational force provides the necessary centripetal force to keep the object in orbit. Therefore, we set \( F_g = F_c \):
+
+\[
+\frac{GMm}{r^2} = \frac{m v^2}{r}
+\]
+
+### 4. Expressing Velocity in Terms of Orbital Period
+
+The velocity of an orbiting object is related to the orbital period \( T \) by the following equation:
+
+\[
+v = \frac{2\pi r}{T}
+\]
+
+Substituting this expression for velocity into the force equation:
+
+\[
+\frac{GMm}{r^2} = \frac{m (2\pi r / T)^2}{r}
+\]
+
+### 5. Simplifying the Equation
+
+Now, we can simplify this equation:
+
+\[
+GM = \frac{4\pi^2 r^3}{T^2}
+\]
+
+### 6. Solving for the Orbital Period
+
+Rearranging the equation to solve for the orbital period \( T \), we get:
+
+\[
+T^2 = \frac{4\pi^2 r^3}{GM}
+\]
+
+This is the **modern Newtonian form** of Kepler's Third Law, which states that the square of the orbital period is proportional to the cube of the orbital radius.
+
+## Kepler’s Third Law
+
+Kepler’s Third Law provides a relationship between the orbital period \( T \) and the orbital radius \( r \):
+
+\[
+T^2 = \frac{4\pi^2 r^3}{GM}
+\]
+
+Where:
+
+- \( T \) is the orbital period (in seconds),
+- \( r \) is the orbital radius (in meters),
+- \( G \) is the gravitational constant (\(6.67430 \times 10^{-11} \, m^3 kg^{-1} s^{-2}\)),
+- \( M \) is the mass of the central body (in kg).
+
+This equation reveals that **larger orbital radii correspond to longer orbital periods**, which is an important factor in understanding the motion of planets, moons, and artificial satellites.
+
+## Introduction to Kepler's Laws
+
+Kepler’s laws were first formulated in the early 17th century by **Johannes Kepler** based on the careful observations of planetary motion by **Tycho Brahe**. These laws describe how planets move around the Sun and how their orbital characteristics are related.
+
+### Kepler's Three Laws:
 
 | Kepler's Law                        | Description                                                                                                                          |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -37,51 +108,19 @@ In 1609, **Johannes Kepler** formulated three laws of planetary motion based on 
 | **Second Law (Law of Equal Areas)** | A planet sweeps out **equal areas in equal time intervals**, meaning it moves faster when closer to the Sun and slower when farther. |
 | **Third Law (Law of Harmonies)**    | The **square of a planet's orbital period** is proportional to the **cube of its orbital radius**.                                   |
 
-Kepler's laws were originally based on **empirical observations**, but in 1687, **Isaac Newton** derived them using his **Law of Universal Gravitation**, proving that these laws arise naturally from gravitational forces.
-
-## Derivation of Kepler's Third Law
-
-Newton’s version of **Kepler’s Third Law** can be derived using **Newton’s Law of Universal Gravitation** and **centripetal force**.
-
-1.The **gravitational force** acting on a planet of mass $m$ is:
-
-$$ F_g = \frac{GMm}{r^2} $$
-
-2.The **centripetal force** required for circular motion is:
-
-$$ F_c = \frac{m v^2}{r} $$
-
-3.Since the gravitational force provides the necessary centripetal force:
-
-$$ \frac{GMm}{r^2} = \frac{m v^2}{r} $$
-
-4.Expressing velocity in terms of the orbital period:
-
-$$ v = \frac{2\pi r}{T} $$
-
-Substituting this into the equation:
-
-$$ \frac{GMm}{r^2} = \frac{m (2\pi r / T)^2}{r} $$
-
-5.Simplifying:
-
-$$ GM = \frac{4\pi^2 r^3}{T^2} $$
-
-6.Solving for $T^2$:
-
-$$ T^2 = \frac{4\pi^2 r^3}{GM} $$
-
-This is the **modern Newtonian form of Kepler’s Third Law**, showing that the **orbital period squared** is proportional to the **orbital radius cubed**.
+Kepler's Third Law was empirically observed but later derived from **Newton's Law of Universal Gravitation**, which showed that these relationships are a natural consequence of gravitational forces.
 
 ## Applications in Astronomy
 
-Kepler’s Third Law has several applications in astronomy and space exploration:
+Kepler’s Third Law is useful in various fields, including astronomy, space exploration, and satellite motion:
 
 ### 1. **Determining Planetary Masses**
 
-By measuring the orbital period and distance of a planet’s moon, we can calculate the planet’s mass using:
+By measuring the orbital period and distance of a planet’s moon, we can calculate the mass of the planet using:
 
-$$ M = \frac{4\pi^2 r^3}{G T^2} $$
+\[
+M = \frac{4\pi^2 r^3}{G T^2}
+\]
 
 For example, the mass of **Earth** can be determined by analyzing the Moon’s orbit.
 
@@ -122,7 +161,7 @@ The following table lists the **orbital radius and period** of major planets in 
 | Jupiter | 5.20                | 11.86                  | 140.6596 | 140.6080 |
 | Saturn  | 9.58                | 29.46                  | 867.0916 | 881.1824 |
 
-The values for $T^2$ and $r^3$ confirm the **proportional relationship predicted by Kepler's Third Law**.
+The values for \( T^2 \) and \( r^3 \) confirm the **proportional relationship predicted by Kepler's Third Law**.
 
 ## Conclusion
 
@@ -130,7 +169,7 @@ Kepler’s Third Law provides a crucial link between **gravity and orbital motio
 
 ## Implementation in Python
 
-The following Python script computes orbital periods for different celestial bodies and visualizes the relationship. <a href="https://colab.research.google.com/drive/1Wasc-LVBfahkxYizYGd6vsUXhkBpTm8B#scrollTo=VPkb9lVBPTeH" target="_blank">Learn more.</a>
+The following Python script computes orbital periods for different celestial bodies and visualizes the relationship.
 
 ![Kepler's Third Law](keplers_third_law.png)
 
