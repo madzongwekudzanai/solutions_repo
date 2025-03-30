@@ -176,14 +176,14 @@ plt.grid(True)
 plt.show()
 ```
 
-# Interference Pattern Description
+## Interference Pattern Description
 
 - **Constructive Interference**: Bright regions in the contour plot indicate constructive interference, where the waves from multiple sources combine in phase, resulting in a large displacement.
 - **Destructive Interference**: Dark regions indicate destructive interference, where the waves from multiple sources cancel each other out, resulting in a small displacement.
 
-## Interference Patterns Simulations
+### Interference Patterns Simulations
 
-### 1. Varying the Number of Sources (Hexagon vs Octagon)
+#### 1. Varying the Number of Sources (Hexagon vs Octagon)
 
 This simulation compares the interference patterns for polygons with different numbers of sources, specifically a hexagon (6 sources) and an octagon (8 sources).
 
@@ -191,7 +191,7 @@ This simulation compares the interference patterns for polygons with different n
 
 ---
 
-### 2. Changing the Wavelength
+#### 2. Changing the Wavelength
 
 This simulation shows how the interference pattern changes with different wavelengths. A smaller wavelength will cause the interference fringes to be closer together, while a larger wavelength will spread them out.
 
@@ -199,7 +199,7 @@ This simulation shows how the interference pattern changes with different wavele
 
 ---
 
-### 3. Introducing Phase Shifts
+#### 3. Introducing Phase Shifts
 
 This simulation demonstrates the impact of phase shifts between the sources. The phase shifts are applied alternately to each source, and the resulting interference patterns are displayed for phase shifts of 0, 90, and 180 degrees.
 
