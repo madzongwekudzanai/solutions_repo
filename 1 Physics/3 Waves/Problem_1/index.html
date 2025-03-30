@@ -66,6 +66,32 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#wave-equation-for-a-single-source">Wave Equation for a Single Source</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#superposition-of-waves">Superposition of Waves</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem Statement</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-positioning-the-sources">Step 1: Positioning the Sources</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-wave-equations-for-each-source">Step 2: Wave Equations for Each Source</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-superposition-of-waves">Step 3: Superposition of Waves</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-interference-pattern">Step 4: Interference Pattern</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-example-calculation">Step 5: Example Calculation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-of-the-interference-pattern">Visualization of the Interference Pattern</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -119,130 +145,132 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
+<p>Here’s the markdown with the short formulas/equations formatted using <code>$</code>:</p>
+<hr/>
 <h1 id="problem-1">Problem 1</h1>
-<h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
-<h2 id="introduction">Introduction</h2>
+<h2 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h2>
+<h3 id="introduction">Introduction</h3>
 <p>Interference occurs when waves from multiple sources overlap and combine to produce new wave patterns. This phenomenon can be clearly observed on the surface of water, where ripples from different points meet and either amplify or cancel each other. In this problem, we will analyze the interference patterns resulting from the superposition of waves emitted by point sources placed at the vertices of a regular polygon.</p>
 <p>We will start by deriving the equation for the displacement at any point due to a single point source and then extend this to the case where multiple sources are used. We will visualize the interference patterns and analyze regions of constructive and destructive interference.</p>
-<h2 id="wave-equation-for-a-single-source">Wave Equation for a Single Source</h2>
-<p>The displacement of the water surface at a point <span class="arithmatex">\( P(x, y) \)</span> due to a point source located at <span class="arithmatex">\( S_i(x_i, y_i) \)</span> is given by the following wave equation:</p>
+<h3 id="wave-equation-for-a-single-source">Wave Equation for a Single Source</h3>
+<p>The displacement of the water surface at a point <span class="arithmatex">\(P(x, y)\)</span> due to a point source located at <span class="arithmatex">\(S_i(x_i, y_i)\)</span> is given by the following wave equation:</p>
 <div class="arithmatex">\[
 \psi_i(x, y, t) = A \sin(k r_i - \omega t + \phi)
 \]</div>
 <p>Where:</p>
 <ul>
-<li><span class="arithmatex">\( A \)</span> is the amplitude of the wave,</li>
-<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span> is the wave number, with <span class="arithmatex">\( \lambda \)</span> being the wavelength,</li>
-<li><span class="arithmatex">\( \omega = 2\pi f \)</span> is the angular frequency, with <span class="arithmatex">\( f \)</span> being the frequency,</li>
-<li><span class="arithmatex">\( r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2} \)</span> is the distance from the source <span class="arithmatex">\( S_i(x_i, y_i) \)</span> to the point <span class="arithmatex">\( P(x, y) \)</span>,</li>
-<li><span class="arithmatex">\( t \)</span> is time,</li>
-<li><span class="arithmatex">\( \phi \)</span> is the initial phase of the wave.</li>
+<li><span class="arithmatex">\(A\)</span> is the amplitude of the wave,</li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, with <span class="arithmatex">\(\lambda\)</span> being the wavelength,</li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, with <span class="arithmatex">\(f\)</span> being the frequency,</li>
+<li><span class="arithmatex">\(r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2}\)</span> is the distance from the source <span class="arithmatex">\(S_i(x_i, y_i)\)</span> to the point <span class="arithmatex">\(P(x, y)\)</span>,</li>
+<li><span class="arithmatex">\(t\)</span> is time,</li>
+<li><span class="arithmatex">\(\phi\)</span> is the initial phase of the wave.</li>
 </ul>
 <h3 id="superposition-of-waves">Superposition of Waves</h3>
 <p>For multiple sources, the total displacement at any point on the water surface is given by the superposition of the displacements from each source:</p>
 <div class="arithmatex">\[
-\psi(x, y, t) = \sum\_{i=1}^{n} A \sin(k r_i - \omega t + \phi)
+\psi(x, y, t) = \sum_{i=1}^{n} A \sin(k r_i - \omega t + \phi)
 \]</div>
-<p>Where <span class="arithmatex">\( n \)</span> is the number of sources (vertices of the regular polygon).</p>
+<p>Where <span class="arithmatex">\(n\)</span> is the number of sources (vertices of the regular polygon).</p>
 <h2 id="problem-statement">Problem Statement</h2>
 <p>We are tasked with analyzing the interference patterns formed on the water surface due to the superposition of waves emitted from point sources placed at the vertices of a regular polygon. For this example, we will use a <strong>regular pentagon</strong> with 5 vertices.</p>
 <h3 id="step-1-positioning-the-sources">Step 1: Positioning the Sources</h3>
-<p>We place the point sources at the vertices of a regular pentagon inscribed in a circle with the center at the origin <span class="arithmatex">\( (0, 0) \)</span>. The radius of the circle is <span class="arithmatex">\( r\_{\text{source}} = 5 \)</span> meters.</p>
-<p>The angular positions of the vertices are given by the angles <span class="arithmatex">\( \theta_i = \frac{2\pi i}{n} \)</span>, where <span class="arithmatex">\( i = 0, 1, 2, 3, 4 \)</span> and <span class="arithmatex">\( n = 5 \)</span> for a pentagon.</p>
+<p>We place the point sources at the vertices of a regular pentagon inscribed in a circle with the center at the origin <span class="arithmatex">\((0, 0)\)</span>. The radius of the circle is <span class="arithmatex">\(r_{\text{source}} = 5\)</span> meters.</p>
+<p>The angular positions of the vertices are given by the angles <span class="arithmatex">\(\theta_i = \frac{2\pi i}{n}\)</span>, where <span class="arithmatex">\(i = 0, 1, 2, 3, 4\)</span> and <span class="arithmatex">\(n = 5\)</span> for a pentagon.</p>
 <p>The coordinates of the sources are:</p>
 <table>
 <thead>
 <tr>
-<th>Source <span class="arithmatex">\( S_i \)</span></th>
-<th>Coordinates <span class="arithmatex">\( (x_i, y_i) \)</span></th>
+<th>Source <span class="arithmatex">\(S_i\)</span></th>
+<th>Coordinates <span class="arithmatex">\((x_i, y_i)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\( S_1 \)</span></td>
-<td><span class="arithmatex">\( (5, 0) \)</span></td>
+<td><span class="arithmatex">\(S_1\)</span></td>
+<td><span class="arithmatex">\((5, 0)\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_2 \)</span></td>
-<td><span class="arithmatex">\( \left(-\frac{5}{2}, \frac{5\sqrt{3}}{2}\right) \)</span></td>
+<td><span class="arithmatex">\(S_2\)</span></td>
+<td><span class="arithmatex">\(\left(-\frac{5}{2}, \frac{5\sqrt{3}}{2}\right)\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_3 \)</span></td>
-<td><span class="arithmatex">\( (-5, 0) \)</span></td>
+<td><span class="arithmatex">\(S_3\)</span></td>
+<td><span class="arithmatex">\((-5, 0)\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_4 \)</span></td>
-<td><span class="arithmatex">\( \left(-\frac{5}{2}, -\frac{5\sqrt{3}}{2}\right) \)</span></td>
+<td><span class="arithmatex">\(S_4\)</span></td>
+<td><span class="arithmatex">\(\left(-\frac{5}{2}, -\frac{5\sqrt{3}}{2}\right)\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_5 \)</span></td>
-<td><span class="arithmatex">\( (5, 0) \)</span></td>
+<td><span class="arithmatex">\(S_5\)</span></td>
+<td><span class="arithmatex">\((5, 0)\)</span></td>
 </tr>
 </tbody>
 </table>
 <h3 id="step-2-wave-equations-for-each-source">Step 2: Wave Equations for Each Source</h3>
-<p>For each source <span class="arithmatex">\( S_i \)</span>, the wave equation is of the form:</p>
+<p>For each source <span class="arithmatex">\(S_i\)</span>, the wave equation is of the form:</p>
 <div class="arithmatex">\[
 \psi_i(x, y, t) = A \sin(k r_i - \omega t + \phi)
 \]</div>
-<p>Where <span class="arithmatex">\( r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2} \)</span> is the distance from the source <span class="arithmatex">\( S_i(x_i, y_i) \)</span> to the point <span class="arithmatex">\( P(x, y) \)</span>.</p>
+<p>Where <span class="arithmatex">\(r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2}\)</span> is the distance from the source <span class="arithmatex">\(S_i(x_i, y_i)\)</span> to the point <span class="arithmatex">\(P(x, y)\)</span>.</p>
 <h3 id="step-3-superposition-of-waves">Step 3: Superposition of Waves</h3>
 <p>The total displacement at any point on the water surface is the sum of the contributions from each of the 5 sources:</p>
 <div class="arithmatex">\[
-\psi(x, y, t) = \sum\_{i=1}^{5} A \sin(k r_i - \omega t + \phi)
+\psi(x, y, t) = \sum_{i=1}^{5} A \sin(k r_i - \omega t + \phi)
 \]</div>
 <h3 id="step-4-interference-pattern">Step 4: Interference Pattern</h3>
 <p>To analyze the interference pattern, we will calculate the displacement at various points on the water surface. Constructive interference occurs when the waves from different sources are in phase, and destructive interference occurs when the waves are out of phase.</p>
 <h3 id="step-5-example-calculation">Step 5: Example Calculation</h3>
 <p>Let’s assume:</p>
 <ul>
-<li><span class="arithmatex">\( A = 1 \)</span> (amplitude),</li>
-<li><span class="arithmatex">\( \lambda = 1 \)</span> m (wavelength),</li>
-<li><span class="arithmatex">\( f = 1 \)</span> Hz (frequency),</li>
-<li><span class="arithmatex">\( \phi = 0 \)</span> (initial phase).</li>
+<li><span class="arithmatex">\(A = 1\)</span> (amplitude),</li>
+<li><span class="arithmatex">\(\lambda = 1\)</span> m (wavelength),</li>
+<li><span class="arithmatex">\(f = 1\)</span> Hz (frequency),</li>
+<li><span class="arithmatex">\(\phi = 0\)</span> (initial phase).</li>
 </ul>
-<p>The wave number <span class="arithmatex">\( k \)</span> and angular frequency <span class="arithmatex">\( \omega \)</span> are:</p>
+<p>The wave number <span class="arithmatex">\(k\)</span> and angular frequency <span class="arithmatex">\(\omega\)</span> are:</p>
 <div class="arithmatex">\[
 k = \frac{2\pi}{\lambda} = 2\pi, \quad \omega = 2\pi f = 2\pi
 \]</div>
-<p>Now we will calculate the displacement at a point <span class="arithmatex">\( P(1, 1) \)</span>. First, compute the distances from each of the five sources to the point <span class="arithmatex">\( P \)</span>:</p>
+<p>Now we will calculate the displacement at a point <span class="arithmatex">\(P(1, 1)\)</span>. First, compute the distances from each of the five sources to the point <span class="arithmatex">\(P\)</span>:</p>
 <table>
 <thead>
 <tr>
-<th>Source <span class="arithmatex">\( S_i \)</span></th>
-<th>Coordinates <span class="arithmatex">\( (x_i, y_i) \)</span></th>
-<th>Distance <span class="arithmatex">\( r_i \)</span> to <span class="arithmatex">\( P(1, 1) \)</span> (m)</th>
+<th>Source <span class="arithmatex">\(S_i\)</span></th>
+<th>Coordinates <span class="arithmatex">\((x_i, y_i)\)</span></th>
+<th>Distance <span class="arithmatex">\(r_i\)</span> to <span class="arithmatex">\(P(1, 1)\)</span> (m)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\( S_1 \)</span></td>
-<td><span class="arithmatex">\( (5, 0) \)</span></td>
-<td><span class="arithmatex">\( \sqrt{(1 - 5)^2 + (1 - 0)^2} = \sqrt{16 + 1} = \sqrt{17} \)</span></td>
+<td><span class="arithmatex">\(S_1\)</span></td>
+<td><span class="arithmatex">\((5, 0)\)</span></td>
+<td><span class="arithmatex">\(\sqrt{(1 - 5)^2 + (1 - 0)^2} = \sqrt{16 + 1} = \sqrt{17}\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_2 \)</span></td>
-<td><span class="arithmatex">\( \left(-\frac{5}{2}, \frac{5\sqrt{3}}{2}\right) \)</span></td>
-<td><span class="arithmatex">\( \sqrt{(1 + \frac{5}{2})^2 + (1 - \frac{5\sqrt{3}}{2})^2} \)</span></td>
+<td><span class="arithmatex">\(S_2\)</span></td>
+<td><span class="arithmatex">\(\left(-\frac{5}{2}, \frac{5\sqrt{3}}{2}\right)\)</span></td>
+<td><span class="arithmatex">\(\sqrt{\left(1 + \frac{5}{2}\right)^2 + \left(1 - \frac{5\sqrt{3}}{2}\right)^2}\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_3 \)</span></td>
-<td><span class="arithmatex">\( (-5, 0) \)</span></td>
-<td><span class="arithmatex">\( \sqrt{(1 + 5)^2 + (1 - 0)^2} = \sqrt{36 + 1} = \sqrt{37} \)</span></td>
+<td><span class="arithmatex">\(S_3\)</span></td>
+<td><span class="arithmatex">\((-5, 0)\)</span></td>
+<td><span class="arithmatex">\(\sqrt{(1 + 5)^2 + (1 - 0)^2} = \sqrt{36 + 1} = \sqrt{37}\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_4 \)</span></td>
-<td><span class="arithmatex">\( \left(-\frac{5}{2}, -\frac{5\sqrt{3}}{2}\right) \)</span></td>
-<td><span class="arithmatex">\( \sqrt{(1 + \frac{5}{2})^2 + (1 + \frac{5\sqrt{3}}{2})^2} \)</span></td>
+<td><span class="arithmatex">\(S_4\)</span></td>
+<td><span class="arithmatex">\(\left(-\frac{5}{2}, -\frac{5\sqrt{3}}{2}\right)\)</span></td>
+<td><span class="arithmatex">\(\sqrt{\left(1 + \frac{5}{2}\right)^2 + \left(1 + \frac{5\sqrt{3}}{2}\right)^2}\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\( S_5 \)</span></td>
-<td><span class="arithmatex">\( (5, 0) \)</span></td>
-<td><span class="arithmatex">\( \sqrt{(1 - 5)^2 + (1 - 0)^2} = \sqrt{16 + 1} = \sqrt{17} \)</span></td>
+<td><span class="arithmatex">\(S_5\)</span></td>
+<td><span class="arithmatex">\((5, 0)\)</span></td>
+<td><span class="arithmatex">\(\sqrt{(1 - 5)^2 + (1 - 0)^2} = \sqrt{16 + 1} = \sqrt{17}\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Once the distances <span class="arithmatex">\( r_i \)</span> are computed, we substitute them into the wave equation for each source and sum the contributions to find the total displacement at the point <span class="arithmatex">\( P(1, 1) \)</span>.</p>
+<p>Once the distances <span class="arithmatex">\(r_i\)</span> are computed, we substitute them into the wave equation for each source and sum the contributions to find the total displacement at the point <span class="arithmatex">\(P(1, 1)\)</span>.</p>
 <h3 id="visualization-of-the-interference-pattern">Visualization of the Interference Pattern</h3>
 <p>We now use Python’s <code>matplotlib</code> to plot the interference patterns for various points on the surface.</p>
 <h4 id="plot-1-interference-pattern-on-a-grid">Plot 1: Interference Pattern on a Grid</h4>
@@ -305,14 +333,27 @@ plt.ylabel("Displacement")
 plt.grid(True)
 plt.show()
 </code></pre>
-<h3 id="interference-pattern-description">Interference Pattern Description</h3>
+<h1 id="interference-pattern-description">Interference Pattern Description</h1>
 <ul>
 <li><strong>Constructive Interference</strong>: Bright regions in the contour plot indicate constructive interference, where the waves from multiple sources combine in phase, resulting in a large displacement.</li>
 <li><strong>Destructive Interference</strong>: Dark regions indicate destructive interference, where the waves from multiple sources cancel each other out, resulting in a small displacement.</li>
 </ul>
+<h2 id="interference-patterns-simulations">Interference Patterns Simulations</h2>
+<h3 id="1-varying-the-number-of-sources-hexagon-vs-octagon">1. Varying the Number of Sources (Hexagon vs Octagon)</h3>
+<p>This simulation compares the interference patterns for polygons with different numbers of sources, specifically a hexagon (6 sources) and an octagon (8 sources).</p>
+<p><img alt="Hexagon vs Octagon Interference" src="../interference_sources.gif"/></p>
+<hr/>
+<h3 id="2-changing-the-wavelength">2. Changing the Wavelength</h3>
+<p>This simulation shows how the interference pattern changes with different wavelengths. A smaller wavelength will cause the interference fringes to be closer together, while a larger wavelength will spread them out.</p>
+<p><img alt="Changing Wavelength" src="../interference_wavelength.gif"/></p>
+<hr/>
+<h3 id="3-introducing-phase-shifts">3. Introducing Phase Shifts</h3>
+<p>This simulation demonstrates the impact of phase shifts between the sources. The phase shifts are applied alternately to each source, and the resulting interference patterns are displayed for phase shifts of 0, 90, and 180 degrees.</p>
+<p><img alt="Phase Shifts Interference" src="../interference_phase_shifts.gif"/></p>
+<hr/>
 <h2 id="conclusion">Conclusion</h2>
 <p>The interference patterns formed by the superposition of waves from point sources placed at the vertices of a regular polygon (in this case, a pentagon) exhibit regions of constructive and destructive interference. The symmetry of the polygon leads to regular patterns of amplification and cancellation of the wave amplitudes. These patterns can be visualized using graphical tools like Python’s <code>matplotlib</code>, and the results highlight the fascinating nature of wave interactions.</p>
-<p>By adjusting parameters such as frequency, amplitude, and the number of sources, we can further explore the complex behaviors of waves in two-dimensional spaces.</p>
+<p>By adjusting parameters such as frequency, amplitude,</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
