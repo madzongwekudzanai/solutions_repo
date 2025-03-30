@@ -1,7 +1,3 @@
-Here’s the markdown with the short formulas/equations formatted using `$`:
-
----
-
 # Problem 1
 
 ## Interference Patterns on a Water Surface
