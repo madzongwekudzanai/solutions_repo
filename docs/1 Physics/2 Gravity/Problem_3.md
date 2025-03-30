@@ -1,7 +1,3 @@
-Here's an expanded version of the document with more mathematical examples and computations to further illustrate different trajectories:
-
----
-
 # Problem 3
 
 # Trajectories of a Freely Released Payload Near Earth
@@ -14,31 +10,31 @@ Understanding the different trajectories that a payload can follow, based on its
 
 ## Gravitational Force and Equations of Motion
 
-The motion of a payload near Earth is governed by Newton’s law of gravitation. The gravitational force acting on an object of mass \(m\) at a distance \(r\) from the center of Earth is given by:
+The motion of a payload near Earth is governed by Newton’s law of gravitation. The gravitational force acting on an object of mass $m$ at a distance $r$ from the center of Earth is given by:
 
-\[
-F = \frac{G M m}{r^2}
-\]
+$$
+F = \frac{GMm}{r^2}
+$$
 
 Where:
 
-- \(F\) is the gravitational force (in newtons),
-- \(G\) is the gravitational constant, \(6.67430 \times 10^{-11} \) m³/kg⋅s²,
-- \(M\) is the mass of Earth (\(5.972 \times 10^{24}\) kg),
-- \(m\) is the mass of the payload,
-- \(r\) is the distance from the center of Earth to the payload (in meters).
+- $F$ is the gravitational force (in newtons),
+- $G$ is the gravitational constant, $6.67430 \times 10^{-11}$ m³/kg⋅s²,
+- $M$ is the mass of Earth ($5.972 \times 10^{24}$ kg),
+- $m$ is the mass of the payload,
+- $r$ is the distance from the center of Earth to the payload (in meters).
 
-The force is responsible for the acceleration of the payload towards Earth. The acceleration \(a\) is given by:
+The force is responsible for the acceleration of the payload towards Earth. The acceleration $a$ is given by:
 
-\[
+$$
 a = \frac{F}{m} = \frac{GM}{r^2}
-\]
+$$
 
 This is also referred to as **gravitational acceleration**. The second-order differential equations describing the motion of an object under Earth's gravity are:
 
-\[
+$$
 \frac{d^2 x}{dt^2} = -\frac{GM x}{(x^2 + y^2)^{3/2}}, \quad \frac{d^2 y}{dt^2} = -\frac{GM y}{(x^2 + y^2)^{3/2}}
-\]
+$$
 
 These equations form the foundation for calculating the trajectory of the payload.
 
@@ -48,38 +44,38 @@ Let's now expand on the motion using a specific example to compute the initial v
 
 1. **Escape Velocity Computation**
 
-The escape velocity at a given distance \(r\) from the center of Earth is given by:
+The escape velocity at a given distance $r$ from the center of Earth is given by:
 
-\[
-v\_{\text{esc}} = \sqrt{\frac{2GM}{r}}
-\]
+$$
+v_{\text{esc}} = \sqrt{\frac{2GM}{r}}
+$$
 
-At Earth's surface, \(r = R\_{\text{Earth}} = 6.371 \times 10^6 \, \text{m}\):
+At Earth's surface, $r = R_{\text{Earth}} = 6.371 \times 10^6$ m:
 
-\[
-v\_{\text{esc}} = \sqrt{\frac{2 \times 6.67430 \times 10^{-11} \times 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 11200 \, \text{m/s}
-\]
+$$
+v_{\text{esc}} = \sqrt{\frac{2 \times 6.67430 \times 10^{-11} \times 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 11200 \, \text{m/s}
+$$
 
 2. **Energy Conservation in Gravitational Motion**
 
-For a payload, the total mechanical energy is conserved in the absence of other forces. The total energy \(E\) is the sum of the kinetic and potential energies:
+For a payload, the total mechanical energy is conserved in the absence of other forces. The total energy $E$ is the sum of the kinetic and potential energies:
 
-\[
+$$
 E = \frac{1}{2} m v^2 - \frac{GMm}{r}
-\]
+$$
 
 Where:
 
-- \(v\) is the velocity of the payload,
-- \(r\) is the distance from the center of Earth.
+- $v$ is the velocity of the payload,
+- $r$ is the distance from the center of Earth.
 
 For different initial velocities, we compute the total energy:
 
-- For a payload at \(r = 2 \times R\_{\text{Earth}}\) with an initial velocity of \(v_0 = 9000 \, \text{m/s}\):
+- For a payload at $r = 2 \times R_{\text{Earth}}$ with an initial velocity of $v_0 = 9000 \, \text{m/s}$:
 
-\[
-E = \frac{1}{2} m (9000)^2 - \frac{GMm}{2R\_{\text{Earth}}}
-\]
+$$
+E = \frac{1}{2} m (9000)^2 - \frac{GMm}{2R_{\text{Earth}}}
+$$
 
 This can be expanded for different scenarios as part of a trajectory analysis.
 
@@ -93,15 +89,15 @@ When the initial velocity is less than the escape velocity, the payload follows 
 
 The general equation for an elliptical orbit is derived from Kepler's Laws:
 
-\[
+$$
 r(t) = \frac{a(1 - e^2)}{1 + e \cos(\theta)}
-\]
+$$
 
 Where:
 
-- \(a\) is the semi-major axis,
-- \(e\) is the orbital eccentricity,
-- \(\theta\) is the true anomaly (the angle between the payload and the periapsis).
+- $a$ is the semi-major axis,
+- $e$ is the orbital eccentricity,
+- $\theta$ is the true anomaly (the angle between the payload and the periapsis).
 
 ### 2. **Parabolic Trajectory**
 
@@ -115,7 +111,7 @@ If the payload's initial velocity exceeds the escape velocity, the trajectory wi
 
 To simulate the trajectory of a payload under the influence of Earth’s gravity, we use numerical methods, particularly **Runge-Kutta** and **adaptive solvers** to solve the equations of motion.
 
-Below is an extended version of the code with multiple scenarios and further mathematical computations. <a href="https://colab.research.google.com/drive/1Ednr7-CPkA0YtiMMcqQB_HHBQg6yCsmH#scrollTo=EL_sji7HhYQI" target="_blank">Learn more.</a>
+Below is an extended version of the code with multiple scenarios and further mathematical computations. [Learn more here](https://colab.research.google.com/drive/1Ednr7-CPkA0YtiMMcqQB_HHBQg6yCsmH#scrollTo=EL_sji7HhYQI).
 
 ![Payload Trajectory](payload_trajectory.png)
 
@@ -167,19 +163,19 @@ plt.show()
 
 ### Additional Example: Calculation of Energy
 
-To further illustrate the differences in energy at various positions, consider the following energy calculation for a payload with initial velocity \(v*0 = 9000 \, \text{m/s}\) at \(r = 2 \times R*{\text{Earth}}\):
+To further illustrate the differences in energy at various positions, consider the following energy calculation for a payload with initial velocity $v_0 = 9000 \, \text{m/s}$ at $r = 2 \times R_{\text{Earth}}$:
 
 - Compute the total mechanical energy:
 
-\[
+$$
 E = \frac{1}{2} m v_0^2 - \frac{GMm}{r}
-\]
+$$
 
-For \(v*0 = 9000 \, \text{m/s}\) and \(r = 2R*{\text{Earth}}\):
+For $v_0 = 9000 \, \text{m/s}$ and $r = 2R_{\text{Earth}}$:
 
-\[
-E = \frac{1}{2} m (9000)^2 - \frac{G M m}{2R\_{\text{Earth}}}
-\]
+$$
+E = \frac{1}{2} m (9000)^2 - \frac{G M m}{2R_{\text{Earth}}}
+$$
 
 ### Conclusion
 
