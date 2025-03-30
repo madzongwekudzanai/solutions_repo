@@ -119,8 +119,6 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<p>Here's an expanded version of the document with more mathematical examples and computations to further illustrate different trajectories:</p>
-<hr/>
 <h1 id="problem-3">Problem 3</h1>
 <h1 id="trajectories-of-a-freely-released-payload-near-earth">Trajectories of a Freely Released Payload Near Earth</h1>
 <h2 id="introduction">Introduction</h2>
@@ -129,12 +127,12 @@
 <h2 id="gravitational-force-and-equations-of-motion">Gravitational Force and Equations of Motion</h2>
 <p>The motion of a payload near Earth is governed by Newton’s law of gravitation. The gravitational force acting on an object of mass <span class="arithmatex">\(m\)</span> at a distance <span class="arithmatex">\(r\)</span> from the center of Earth is given by:</p>
 <div class="arithmatex">\[
-F = \frac{G M m}{r^2}
+F = \frac{GMm}{r^2}
 \]</div>
 <p>Where:</p>
 <ul>
 <li><span class="arithmatex">\(F\)</span> is the gravitational force (in newtons),</li>
-<li><span class="arithmatex">\(G\)</span> is the gravitational constant, <span class="arithmatex">\(6.67430 \times 10^{-11} \)</span> m³/kg⋅s²,</li>
+<li><span class="arithmatex">\(G\)</span> is the gravitational constant, <span class="arithmatex">\(6.67430 \times 10^{-11}\)</span> m³/kg⋅s²,</li>
 <li><span class="arithmatex">\(M\)</span> is the mass of Earth (<span class="arithmatex">\(5.972 \times 10^{24}\)</span> kg),</li>
 <li><span class="arithmatex">\(m\)</span> is the mass of the payload,</li>
 <li><span class="arithmatex">\(r\)</span> is the distance from the center of Earth to the payload (in meters).</li>
@@ -155,11 +153,11 @@ a = \frac{F}{m} = \frac{GM}{r^2}
 </ol>
 <p>The escape velocity at a given distance <span class="arithmatex">\(r\)</span> from the center of Earth is given by:</p>
 <div class="arithmatex">\[
-v\_{\text{esc}} = \sqrt{\frac{2GM}{r}}
+v_{\text{esc}} = \sqrt{\frac{2GM}{r}}
 \]</div>
-<p>At Earth's surface, <span class="arithmatex">\(r = R\_{\text{Earth}} = 6.371 \times 10^6 \, \text{m}\)</span>:</p>
+<p>At Earth's surface, <span class="arithmatex">\(r = R_{\text{Earth}} = 6.371 \times 10^6\)</span> m:</p>
 <div class="arithmatex">\[
-v\_{\text{esc}} = \sqrt{\frac{2 \times 6.67430 \times 10^{-11} \times 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 11200 \, \text{m/s}
+v_{\text{esc}} = \sqrt{\frac{2 \times 6.67430 \times 10^{-11} \times 5.972 \times 10^{24}}{6.371 \times 10^6}} \approx 11200 \, \text{m/s}
 \]</div>
 <ol>
 <li><strong>Energy Conservation in Gravitational Motion</strong></li>
@@ -175,10 +173,10 @@ E = \frac{1}{2} m v^2 - \frac{GMm}{r}
 </ul>
 <p>For different initial velocities, we compute the total energy:</p>
 <ul>
-<li>For a payload at <span class="arithmatex">\(r = 2 \times R\_{\text{Earth}}\)</span> with an initial velocity of <span class="arithmatex">\(v_0 = 9000 \, \text{m/s}\)</span>:</li>
+<li>For a payload at <span class="arithmatex">\(r = 2 \times R_{\text{Earth}}\)</span> with an initial velocity of <span class="arithmatex">\(v_0 = 9000 \, \text{m/s}\)</span>:</li>
 </ul>
 <div class="arithmatex">\[
-E = \frac{1}{2} m (9000)^2 - \frac{GMm}{2R\_{\text{Earth}}}
+E = \frac{1}{2} m (9000)^2 - \frac{GMm}{2R_{\text{Earth}}}
 \]</div>
 <p>This can be expanded for different scenarios as part of a trajectory analysis.</p>
 <h2 id="types-of-trajectories">Types of Trajectories</h2>
@@ -201,7 +199,7 @@ r(t) = \frac{a(1 - e^2)}{1 + e \cos(\theta)}
 <p>If the payload's initial velocity exceeds the escape velocity, the trajectory will be hyperbolic. In this case, the payload escapes Earth's gravitational influence completely, traveling on a path that takes it far beyond Earth.</p>
 <h2 id="numerical-simulation-of-trajectories">Numerical Simulation of Trajectories</h2>
 <p>To simulate the trajectory of a payload under the influence of Earth’s gravity, we use numerical methods, particularly <strong>Runge-Kutta</strong> and <strong>adaptive solvers</strong> to solve the equations of motion.</p>
-<p>Below is an extended version of the code with multiple scenarios and further mathematical computations. <a href="https://colab.research.google.com/drive/1Ednr7-CPkA0YtiMMcqQB_HHBQg6yCsmH#scrollTo=EL_sji7HhYQI" target="_blank">Learn more.</a></p>
+<p>Below is an extended version of the code with multiple scenarios and further mathematical computations. <a href="https://colab.research.google.com/drive/1Ednr7-CPkA0YtiMMcqQB_HHBQg6yCsmH#scrollTo=EL_sji7HhYQI">Learn more here</a>.</p>
 <p><img alt="Payload Trajectory" src="../payload_trajectory.png"/></p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -248,16 +246,16 @@ plt.title("Different Trajectories of a Released Payload")
 plt.show()
 </code></pre>
 <h3 id="additional-example-calculation-of-energy">Additional Example: Calculation of Energy</h3>
-<p>To further illustrate the differences in energy at various positions, consider the following energy calculation for a payload with initial velocity <span class="arithmatex">\(v*0 = 9000 \, \text{m/s}\)</span> at <span class="arithmatex">\(r = 2 \times R*{\text{Earth}}\)</span>:</p>
+<p>To further illustrate the differences in energy at various positions, consider the following energy calculation for a payload with initial velocity <span class="arithmatex">\(v_0 = 9000 \, \text{m/s}\)</span> at <span class="arithmatex">\(r = 2 \times R_{\text{Earth}}\)</span>:</p>
 <ul>
 <li>Compute the total mechanical energy:</li>
 </ul>
 <div class="arithmatex">\[
 E = \frac{1}{2} m v_0^2 - \frac{GMm}{r}
 \]</div>
-<p>For <span class="arithmatex">\(v*0 = 9000 \, \text{m/s}\)</span> and <span class="arithmatex">\(r = 2R*{\text{Earth}}\)</span>:</p>
+<p>For <span class="arithmatex">\(v_0 = 9000 \, \text{m/s}\)</span> and <span class="arithmatex">\(r = 2R_{\text{Earth}}\)</span>:</p>
 <div class="arithmatex">\[
-E = \frac{1}{2} m (9000)^2 - \frac{G M m}{2R\_{\text{Earth}}}
+E = \frac{1}{2} m (9000)^2 - \frac{G M m}{2R_{\text{Earth}}}
 \]</div>
 <h3 id="conclusion">Conclusion</h3>
 <p>This study explored payload trajectories mathematically and computationally, deriving governing equations, implementing numerical solutions with improved accuracy, and providing multiple examples. These additional mathematical calculations, including energy considerations and velocity computations, provide further insight into how different initial conditions affect the trajectory.</p>
