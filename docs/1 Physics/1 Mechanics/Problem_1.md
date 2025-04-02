@@ -97,19 +97,55 @@ where:
 - \( A \) = cross-sectional area (m²)
 - \( v \) = velocity (m/s)
 
+The velocity \( v \) is the magnitude of the velocity vector, given by:
+
+\[ v = \sqrt{v_x^2 + v_y^2} \]
+
+The drag force acts in the direction opposite to motion, so it affects both the horizontal and vertical components separately.
+
+---
+
 ### **1.4 Numerical Computation with Air Resistance**
 
-With air resistance, the equations of motion become nonlinear differential equations:
+With air resistance, the equations of motion become nonlinear differential equations. Below, we derive the horizontal and vertical components.
 
 #### **1.4.1 Horizontal Motion with Drag**
+
+Newton’s Second Law states:
+
+\[ F_x = m \frac{dv_x}{dt} \]
+
+Since the only force acting in the horizontal direction is the drag force:
+
+\[ - F_d \cos \theta = m \frac{dv_x}{dt} \]
+
+where \( \theta \) is the angle of the velocity vector. Substituting \( F_d \):
+
+\[ - \frac{1}{2} C_d \rho A v^2 \cos \theta = m \frac{dv_x}{dt} \]
+
+Since \( \cos \theta = \frac{v_x}{v} \), we obtain:
 
 \[ m \frac{dv_x}{dt} = -\frac{1}{2} C_d \rho A v v_x \]
 
 #### **1.4.2 Vertical Motion with Drag**
 
+Applying Newton’s Second Law in the vertical direction:
+
+\[ F_y = m \frac{dv_y}{dt} \]
+
+The forces in the vertical direction are gravity and drag:
+
+\[ - mg - F_d \sin \theta = m \frac{dv_y}{dt} \]
+
+Substituting \( F_d \):
+
+\[ - mg - \frac{1}{2} C_d \rho A v^2 \sin \theta = m \frac{dv_y}{dt} \]
+
+Since \( \sin \theta = \frac{v_y}{v} \), we get:
+
 \[ m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y \]
 
-where \( v_x \) and \( v_y \) are the horizontal and vertical velocity components. These equations require numerical methods (such as Euler’s method or Runge-Kutta) for solving.
+These coupled differential equations require numerical methods such as Euler’s method or Runge-Kutta to solve for projectile motion with air resistance.
 
 ### **1.5 Summary of Important Equations**
 
