@@ -10,6 +10,8 @@
 
 Projectile motion is a fundamental topic in classical mechanics, describing the motion of an object launched into the air under the influence of gravity. It plays a crucial role in various real-world applications, such as ballistics, sports, and space exploration. Understanding projectile motion requires analyzing both horizontal and vertical components independently, assuming no external forces except gravity (neglecting air resistance initially). By exploring its equations, derivations, and computational approaches, we can gain deeper insights into the factors influencing projectile trajectory.
 
+![Projectile Motion](proj_motion.jpg)
+
 ### **1.1 Equations of Motion**
 
 The motion of a projectile launched with an initial velocity \( v_0 \) at an angle \( \theta \) is governed by the fundamental kinematic equations.
