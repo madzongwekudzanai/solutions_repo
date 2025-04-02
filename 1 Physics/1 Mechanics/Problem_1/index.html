@@ -178,13 +178,31 @@
 <li><span class="arithmatex">\( A \)</span> = cross-sectional area (m²)</li>
 <li><span class="arithmatex">\( v \)</span> = velocity (m/s)</li>
 </ul>
+<p>The velocity <span class="arithmatex">\( v \)</span> is the magnitude of the velocity vector, given by:</p>
+<div class="arithmatex">\[ v = \sqrt{v_x^2 + v_y^2} \]</div>
+<p>The drag force acts in the direction opposite to motion, so it affects both the horizontal and vertical components separately.</p>
+<hr/>
 <h3 id="14-numerical-computation-with-air-resistance"><strong>1.4 Numerical Computation with Air Resistance</strong></h3>
-<p>With air resistance, the equations of motion become nonlinear differential equations:</p>
+<p>With air resistance, the equations of motion become nonlinear differential equations. Below, we derive the horizontal and vertical components.</p>
 <h4 id="141-horizontal-motion-with-drag"><strong>1.4.1 Horizontal Motion with Drag</strong></h4>
+<p>Newton’s Second Law states:</p>
+<div class="arithmatex">\[ F_x = m \frac{dv_x}{dt} \]</div>
+<p>Since the only force acting in the horizontal direction is the drag force:</p>
+<div class="arithmatex">\[ - F_d \cos \theta = m \frac{dv_x}{dt} \]</div>
+<p>where <span class="arithmatex">\( \theta \)</span> is the angle of the velocity vector. Substituting <span class="arithmatex">\( F_d \)</span>:</p>
+<div class="arithmatex">\[ - \frac{1}{2} C_d \rho A v^2 \cos \theta = m \frac{dv_x}{dt} \]</div>
+<p>Since <span class="arithmatex">\( \cos \theta = \frac{v_x}{v} \)</span>, we obtain:</p>
 <div class="arithmatex">\[ m \frac{dv_x}{dt} = -\frac{1}{2} C_d \rho A v v_x \]</div>
 <h4 id="142-vertical-motion-with-drag"><strong>1.4.2 Vertical Motion with Drag</strong></h4>
+<p>Applying Newton’s Second Law in the vertical direction:</p>
+<div class="arithmatex">\[ F_y = m \frac{dv_y}{dt} \]</div>
+<p>The forces in the vertical direction are gravity and drag:</p>
+<div class="arithmatex">\[ - mg - F_d \sin \theta = m \frac{dv_y}{dt} \]</div>
+<p>Substituting <span class="arithmatex">\( F_d \)</span>:</p>
+<div class="arithmatex">\[ - mg - \frac{1}{2} C_d \rho A v^2 \sin \theta = m \frac{dv_y}{dt} \]</div>
+<p>Since <span class="arithmatex">\( \sin \theta = \frac{v_y}{v} \)</span>, we get:</p>
 <div class="arithmatex">\[ m \frac{dv_y}{dt} = -mg - \frac{1}{2} C_d \rho A v v_y \]</div>
-<p>where <span class="arithmatex">\( v_x \)</span> and <span class="arithmatex">\( v_y \)</span> are the horizontal and vertical velocity components. These equations require numerical methods (such as Euler’s method or Runge-Kutta) for solving.</p>
+<p>These coupled differential equations require numerical methods such as Euler’s method or Runge-Kutta to solve for projectile motion with air resistance.</p>
 <h3 id="15-summary-of-important-equations"><strong>1.5 Summary of Important Equations</strong></h3>
 <table>
 <thead>
