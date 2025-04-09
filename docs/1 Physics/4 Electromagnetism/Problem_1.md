@@ -150,12 +150,10 @@ Modify `E = np.array([1.0, 0.0, 0.0])` and re-run the loop.
 
 ## 5. Relation to Real Systems
 
-| System         | Observation                                | Related Equation                                     |
-|----------------|--------------------------------------------|------------------------------------------------------|
-| Cyclotron      | Particles accelerate in spiral paths       | $\omega_c = \dfrac{|q|B}{m}$                         |
-| Magnetic Traps | Confines charged particles using $\vec{B}$ | $r_L = \dfrac{mv}{|q|B}$                             |
-| Fusion Plasma  | $E \times B$ drift impacts confinement     | $\vec{v}_d = \dfrac{\vec{E} \times \vec{B}}{B^2}$    |
+| System         | Observation                                | Related Equation                                  |
+| -------------- | ------------------------------------------ | ------------------------------------------------- |
+| Cyclotron      | Particles accelerate in spiral paths       | $\omega_c = \dfrac{\|q\|B}{m}$                    |
+| Magnetic Traps | Confines charged particles using $\vec{B}$ | $r_L = \dfrac{mv}{\|q\|B}$                        |
+| Fusion Plasma  | $E \times B$ drift impacts confinement     | $\vec{v}_d = \dfrac{\vec{E} \times \vec{B}}{B^2}$ |
 
 These equations and simulations help design efficient magnetic confinement systems and predict particle behavior in both lab and cosmic environments.
-
-
