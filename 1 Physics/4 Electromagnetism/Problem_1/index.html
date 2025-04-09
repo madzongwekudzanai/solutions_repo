@@ -120,6 +120,202 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="lorentz-force-simulation-project">Lorentz Force Simulation Project</h1>
+<h3 id="introduction">Introduction</h3>
+<p>The motion of charged particles in electromagnetic fields is governed by the Lorentz force, a fundamental principle in classical electrodynamics. This force plays a crucial role in numerous physical systems and technologies, from the design of particle accelerators and mass spectrometers to the containment of plasma in nuclear fusion experiments and the dynamics of cosmic particles in astrophysics.</p>
+<p>Understanding the behavior of particles under the influence of electric (<span class="arithmatex">\(\vec{E}\)</span>) and magnetic (<span class="arithmatex">\(\vec{B}\)</span>) fields provides insights into both natural phenomena and engineered systems. Simulations allow us to visualize trajectories that would otherwise be impossible to observe directly, making complex interactions more intuitive. In this project, we simulate various scenarios involving charged particles subjected to electromagnetic fields and analyze their resulting motion.</p>
+<hr/>
+<h2 id="1-exploration-of-applications">1. Exploration of Applications</h2>
+<h3 id="real-world-systems-involving-the-lorentz-force">Real-World Systems Involving the Lorentz Force</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Particle Accelerators</td>
+<td>Magnetic fields bend trajectories; electric fields accelerate particles.</td>
+</tr>
+<tr>
+<td>Mass Spectrometers</td>
+<td>Separate ions based on mass-to-charge ratio using <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span>.</td>
+</tr>
+<tr>
+<td>Plasma Confinement (Tokamak)</td>
+<td>Magnetic fields confine plasma to control nuclear fusion reactions.</td>
+</tr>
+<tr>
+<td>Cyclotrons</td>
+<td>Utilize a perpendicular <span class="arithmatex">\(\vec{B}\)</span> field and oscillating <span class="arithmatex">\(\vec{E}\)</span> to spiral particles.</td>
+</tr>
+<tr>
+<td>Astrophysics</td>
+<td>Cosmic rays interact with planetary magnetic fields, forming Van Allen belts.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="role-of-vece-and-vecb-fields">Role of <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> Fields</h3>
+<ul>
+<li><strong>Electric Field (<span class="arithmatex">\(\vec{E}\)</span>):</strong> Applies a force parallel to the field direction, causing the particle to accelerate or decelerate. This results in a change in the particle's kinetic energy.</li>
+<li><strong>Magnetic Field (<span class="arithmatex">\(\vec{B}\)</span>):</strong> Exerts a force perpendicular to both the velocity and the magnetic field, leading to circular or helical motion. It alters the direction of motion without doing work.</li>
+</ul>
+<hr/>
+<h2 id="2-simulating-particle-motion">2. Simulating Particle Motion</h2>
+<p>The Lorentz force is given by:</p>
+<div class="arithmatex">\[
+\vec{F} = q(\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>According to Newton's second law:</p>
+<div class="arithmatex">\[
+\vec{F} = m\frac{d\vec{v}}{dt}
+\]</div>
+<p>Combining both:</p>
+<div class="arithmatex">\[
+\frac{d\vec{v}}{dt} = \frac{q}{m}(\vec{E} + \vec{v} \times \vec{B})
+\]</div>
+<p>This forms a system of differential equations that can be solved using numerical techniques such as Euler or Runge-Kutta methods.</p>
+<h3 id="21-case-a-uniform-magnetic-field-only-vece-0">2.1 Case A: Uniform Magnetic Field Only (<span class="arithmatex">\(\vec{E} = 0\)</span>)</h3>
+<ul>
+<li>With no electric field, the particle undergoes circular or helical motion, depending on the initial velocity.</li>
+<li>If <span class="arithmatex">\(\vec{v} \perp \vec{B}\)</span>, the path is circular. If <span class="arithmatex">\(\vec{v}\)</span> has a component parallel to <span class="arithmatex">\(\vec{B}\)</span>, the result is a helix.</li>
+</ul>
+<h4 id="derivation-of-larmor-radius">Derivation of Larmor Radius:</h4>
+<p>From centripetal force:</p>
+<div class="arithmatex">\[
+\frac{mv^2}{r} = qvB
+\]</div>
+<p>Solving for <span class="arithmatex">\(r\)</span>:</p>
+<div class="arithmatex">\[
+\boxed{r_L = \frac{mv}{|q|B}} \quad \text{(Larmor Radius)}
+\]</div>
+<h4 id="cyclotron-frequency">Cyclotron Frequency:</h4>
+<div class="arithmatex">\[
+\boxed{\omega_c = \frac{|q|B}{m}} \quad \text{(Cyclotron Frequency)}
+\]</div>
+<h3 id="22-case-b-uniform-vece-and-vecb-fields">2.2 Case B: Uniform <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> Fields</h3>
+<ul>
+<li>If <span class="arithmatex">\(\vec{E} \parallel \vec{B}\)</span>: Acceleration is linear along the field lines.</li>
+<li>If <span class="arithmatex">\(\vec{E} \perp \vec{B}\)</span>: The particle exhibits drift in the direction perpendicular to both fields.</li>
+</ul>
+<h4 id="drift-velocity">Drift Velocity:</h4>
+<div class="arithmatex">\[
+\boxed{\vec{v}_d = \frac{\vec{E} \times \vec{B}}{B^2}}
+\]</div>
+<hr/>
+<h2 id="3-parameter-exploration">3. Parameter Exploration</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Electric Field</td>
+<td><span class="arithmatex">\(\vec{E}\)</span></td>
+<td>[0, 0, 0]</td>
+<td>Constant vector field</td>
+</tr>
+<tr>
+<td>Magnetic Field</td>
+<td><span class="arithmatex">\(\vec{B}\)</span></td>
+<td>[0, 0, 1]</td>
+<td>Constant vector field</td>
+</tr>
+<tr>
+<td>Initial Velocity</td>
+<td><span class="arithmatex">\(\vec{v}_0\)</span></td>
+<td>[1, 0, 0]</td>
+<td>Controls type of trajectory</td>
+</tr>
+<tr>
+<td>Charge</td>
+<td><span class="arithmatex">\(q\)</span></td>
+<td>1.0</td>
+<td>Can be +ve or -ve (electrons, protons)</td>
+</tr>
+<tr>
+<td>Mass</td>
+<td><span class="arithmatex">\(m\)</span></td>
+<td>1.0</td>
+<td>Affects radius and frequency</td>
+</tr>
+</tbody>
+</table>
+<p>By changing these parameters, one can observe transitions from circular to helical motion, increase in drift velocities, and variations in path curvature.</p>
+<hr/>
+<h2 id="4-visualization">4. Visualization</h2>
+<p><img alt="Electromagnetism" src="../elctromagnetism.png"/></p>
+<p>We use Python libraries like <code>NumPy</code> and <code>Matplotlib</code> to plot trajectories. <a href="https://colab.research.google.com/drive/1QrdvAk_rvGMcqpjCHFllfr1AxJhTAB22" target="_blank">Learn more.</a></p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Parameters
+q, m = 1.0, 1.0
+B = np.array([0, 0, 1.0])
+E = np.array([0, 0, 0])
+v = np.array([1.0, 0.0, 1.0])
+r = np.array([0.0, 0.0, 0.0])
+dt = 0.01
+steps = 2000
+
+positions = []
+
+for _ in range(steps):
+    F = q * (E + np.cross(v, B))
+    a = F / m
+    v += a * dt
+    r += v * dt
+    positions.append(r.copy())
+
+positions = np.array(positions)
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.plot3D(positions[:,0], positions[:,1], positions[:,2])
+ax.set_title('Helical Trajectory in Uniform Magnetic Field')
+plt.show()
+</code></pre>
+<h3 id="scenario-b-crossed-vece-and-vecb-fields">Scenario B: Crossed <span class="arithmatex">\(\vec{E}\)</span> and <span class="arithmatex">\(\vec{B}\)</span> Fields</h3>
+<ul>
+<li>Expectation: Cyclotron motion superimposed with linear drift.</li>
+</ul>
+<p>Modify <code>E = np.array([1.0, 0.0, 0.0])</code> and re-run the loop.</p>
+<hr/>
+<h2 id="5-relation-to-real-systems">5. Relation to Real Systems</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Observation</th>
+<th>Related Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cyclotron</td>
+<td>Particles accelerate in spiral paths</td>
+<td>$\omega_c = \dfrac{</td>
+</tr>
+<tr>
+<td>Magnetic Traps</td>
+<td>Confines charged particles using <span class="arithmatex">\(\vec{B}\)</span></td>
+<td>$r_L = \dfrac{mv}{</td>
+</tr>
+<tr>
+<td>Fusion Plasma</td>
+<td><span class="arithmatex">\(E \times B\)</span> drift impacts confinement</td>
+<td><span class="arithmatex">\(\vec{v}_d = \dfrac{\vec{E} \times \vec{B}}{B^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>These equations and simulations help design efficient magnetic confinement systems and predict particle behavior in both lab and cosmic environments.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
