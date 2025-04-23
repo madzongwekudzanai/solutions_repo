@@ -119,7 +119,7 @@ We simulate the sampling process as follows:
   - Calculate the sample mean for each.
   - Visualize the distribution of the sample means.
 
-We plot all four sample sizes side-by-side for each distribution to observe the **CLT in action**.
+We plot all four sample sizes side-by-side for each distribution to observe the **CLT in action** <a href="https://colab.research.google.com/drive/1arjaEkPGBiElyyyK9rkvZwoK_iRwhfo_" target="_blank">Open Notebook</a>.
 
 ![Uniform Distribution](uniform.png)
 
