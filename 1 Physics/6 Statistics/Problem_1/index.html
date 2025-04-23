@@ -120,6 +120,323 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="exploring-the-central-limit-theorem-through-simulations">📊 Exploring the Central Limit Theorem Through Simulations</h1>
+<h2 id="introduction">🧠 Introduction</h2>
+<p>The Central Limit Theorem (CLT) is one of the most important and powerful results in the field of statistics. It provides the theoretical foundation for why normal distributions appear so frequently in natural and social phenomena, even when the underlying data is not normally distributed.</p>
+<p>The CLT states:</p>
+<blockquote>
+<p><em>Given a population with any shape of distribution having a finite mean <span class="arithmatex">\(\mu\)</span> and finite standard deviation <span class="arithmatex">\(\sigma\)</span>, the sampling distribution of the sample mean <span class="arithmatex">\(\bar{X}\)</span> will tend toward a normal distribution as the sample size <span class="arithmatex">\(n\)</span> becomes large.</em></p>
+</blockquote>
+<p>This theorem is crucial in practice because it allows us to:</p>
+<ul>
+<li>Use normal probability models for estimation and hypothesis testing, even when the population is not normal.</li>
+<li>Understand the variability of sample means.</li>
+<li>Make reliable inferences about population parameters from sample data.</li>
+</ul>
+<p>This project simulates the CLT using <strong>three different population distributions</strong>:</p>
+<ul>
+<li><strong>Uniform distribution</strong> (symmetric)</li>
+<li><strong>Exponential distribution</strong> (right-skewed)</li>
+<li><strong>Binomial distribution</strong> (discrete, symmetric)</li>
+</ul>
+<p>By drawing repeated samples and calculating their means for increasing sample sizes, we will observe how the <strong>sampling distribution of the sample mean</strong> becomes more bell-shaped and normal-looking.</p>
+<hr/>
+<h2 id="population-distributions-used">🔢 Population Distributions Used</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Parameters</th>
+<th>Theoretical Mean (<span class="arithmatex">\(\mu\)</span>)</th>
+<th>Theoretical Std Dev (<span class="arithmatex">\(\sigma\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uniform</td>
+<td><span class="arithmatex">\(U(0, 1)\)</span></td>
+<td><span class="arithmatex">\(0.5\)</span></td>
+<td><span class="arithmatex">\(\sqrt{1/12} \approx 0.2887\)</span></td>
+</tr>
+<tr>
+<td>Exponential</td>
+<td><span class="arithmatex">\(\lambda = 1\)</span></td>
+<td><span class="arithmatex">\(1\)</span></td>
+<td><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td>Binomial</td>
+<td><span class="arithmatex">\(n = 10, p = 0.5\)</span></td>
+<td><span class="arithmatex">\(5\)</span></td>
+<td><span class="arithmatex">\(\sqrt{10 \cdot 0.5 \cdot 0.5} = 1.58\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="formulas-and-theoretical-background">📐 Formulas and Theoretical Background</h2>
+<h3 id="sample-mean"><strong>Sample Mean:</strong></h3>
+<p>The sample mean <span class="arithmatex">\(\bar{X}\)</span> is calculated as the average of the sampled values:</p>
+<div class="arithmatex">\[
+\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span> is the sample size.</li>
+<li><span class="arithmatex">\(X_i\)</span> are the individual sample values.</li>
+</ul>
+<p>This is the most basic statistic used to summarize the data and serves as an estimate for the population mean <span class="arithmatex">\(\mu\)</span>.</p>
+<hr/>
+<h3 id="expected-value-of-sample-mean"><strong>Expected Value of Sample Mean:</strong></h3>
+<p>The expected value (or mean) of the sample mean <span class="arithmatex">\(\bar{X}\)</span> is the same as the population mean <span class="arithmatex">\(\mu\)</span>. This property comes from the <strong>linearity of expectation</strong>. Thus:</p>
+<div class="arithmatex">\[
+E[\bar{X}] = \mu
+\]</div>
+<p>This means that, on average, the sample mean will be centered around the population mean, regardless of the shape of the population distribution.</p>
+<hr/>
+<h3 id="variance-of-the-sample-mean"><strong>Variance of the Sample Mean:</strong></h3>
+<p>The variance of the sample mean is related to the variance of the population <span class="arithmatex">\(\sigma^2\)</span> and the sample size <span class="arithmatex">\(n\)</span>. The formula for the variance of <span class="arithmatex">\(\bar{X}\)</span> is:</p>
+<div class="arithmatex">\[
+\text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+\]</div>
+<p>This result shows that as the sample size increases, the variance of the sample mean decreases. This is because larger samples provide more information and thus more precise estimates of the population mean.</p>
+<hr/>
+<h3 id="standard-error-of-the-mean-sem"><strong>Standard Error of the Mean (SEM):</strong></h3>
+<p>The standard error (SE) is the square root of the variance:</p>
+<div class="arithmatex">\[
+\text{SE} = \frac{\sigma}{\sqrt{n}}
+\]</div>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\sigma\)</span> is the population standard deviation.</li>
+<li><span class="arithmatex">\(n\)</span> is the sample size.</li>
+</ul>
+<p>This formula tells us how much variability there is in the sample mean. As <span class="arithmatex">\(n\)</span> increases, the SE decreases, meaning the sample mean becomes more stable and reliable as an estimate for the population mean.</p>
+<hr/>
+<h3 id="why-the-sampling-distribution-of-the-sample-mean-approaches-normality"><strong>Why the Sampling Distribution of the Sample Mean Approaches Normality:</strong></h3>
+<p>According to the CLT, as the sample size <span class="arithmatex">\(n\)</span> increases, the sampling distribution of the sample mean <span class="arithmatex">\(\bar{X}\)</span> tends to a normal distribution, regardless of the shape of the original population. This occurs because of the following reasoning:</p>
+<ol>
+<li><strong>Sum of Random Variables</strong>: The sample mean is the sum of independent random variables divided by <span class="arithmatex">\(n\)</span>. The sum of independent random variables, under certain conditions, tends to a normal distribution according to the <strong>Lindeberg-Levy Central Limit Theorem</strong>.</li>
+<li><strong>Convergence</strong>: As <span class="arithmatex">\(n\)</span> becomes large, the distribution of the sample mean converges to a normal distribution with:</li>
+<li>Mean <span class="arithmatex">\(\mu\)</span></li>
+<li>Standard deviation <span class="arithmatex">\(\frac{\sigma}{\sqrt{n}}\)</span></li>
+</ol>
+<p>This result holds for any population distribution that has a finite mean and variance.</p>
+<hr/>
+<h2 id="simulation-and-visualization">🔁 Simulation and Visualization</h2>
+<p>We simulate the sampling process as follows:</p>
+<ul>
+<li>Generate a large population (size = 100,000).</li>
+<li>For each sample size <span class="arithmatex">\(n \in \{5, 10, 30, 50\}\)</span>:</li>
+<li>Draw 1,000 random samples of size <span class="arithmatex">\(n\)</span>.</li>
+<li>Calculate the sample mean for each.</li>
+<li>Visualize the distribution of the sample means.</li>
+</ul>
+<p>We plot all four sample sizes side-by-side for each distribution to observe the <strong>CLT in action</strong>.</p>
+<p><img alt="Uniform Distribution" src="../uniform.png"/></p>
+<p><img alt="Exponential Distribution" src="../exponential.png"/></p>
+<p><img alt="Binomial Distribution" src="../exponential.png"/></p>
+<hr/>
+<h2 id="python-simulation-code">💻 Python Simulation Code</h2>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import norm
+
+def simulate_sampling_distribution(population, mu, sigma, sample_sizes, n_trials=1000, title=""):
+    plt.figure(figsize=(20, 12))
+    for i, n in enumerate(sample_sizes):
+        sample_means = [np.mean(np.random.choice(population, size=n)) for _ in range(n_trials)]
+        empirical_std = np.std(sample_means)
+        theoretical_std = sigma / np.sqrt(n)
+
+        plt.subplot(2, 2, i+1)
+        sns.histplot(sample_means, bins=30, stat='density', color="skyblue", label="Empirical", edgecolor='black')
+
+        x_vals = np.linspace(min(sample_means), max(sample_means), 1000)
+        plt.plot(x_vals, norm.pdf(x_vals, mu, theoretical_std), 'r--', label="Theoretical Normal")
+
+        plt.title(f"{title} (n = {n})")
+        plt.xlabel("Sample Mean")
+        plt.ylabel("Density")
+        plt.legend()
+        plt.grid(True)
+
+        print(f"{title} | n={n} =&gt; Mean: {np.mean(sample_means):.4f}, Std Dev: {empirical_std:.4f}, Theoretical: {theoretical_std:.4f}")
+
+    plt.suptitle(f"Sampling Distributions of the Mean - {title}", fontsize=20)
+    plt.tight_layout(rect=[0, 0, 1, 0.95])
+    plt.show()
+
+# Setup
+sample_sizes = [5, 10, 30, 50]
+
+# Uniform distribution
+uniform_pop = np.random.uniform(0, 1, size=100000)
+simulate_sampling_distribution(uniform_pop, mu=0.5, sigma=np.sqrt(1/12), sample_sizes=sample_sizes, title="Uniform Distribution")
+
+# Exponential distribution
+exp_pop = np.random.exponential(scale=1.0, size=100000)
+simulate_sampling_distribution(exp_pop, mu=1.0, sigma=1.0, sample_sizes=sample_sizes, title="Exponential Distribution")
+
+# Binomial distribution
+binom_pop = np.random.binomial(n=10, p=0.5, size=100000)
+simulate_sampling_distribution(binom_pop, mu=5.0, sigma=np.sqrt(10*0.5*0.5), sample_sizes=sample_sizes, title="Binomial Distribution")
+
+</code></pre>
+<hr/>
+<h2 id="summary-table-of-results">📋 Summary Table of Results</h2>
+<table>
+<thead>
+<tr>
+<th>Distribution</th>
+<th>Sample Size</th>
+<th>Empirical Mean</th>
+<th>Empirical Std Dev</th>
+<th>Theoretical Std Dev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uniform</td>
+<td>5</td>
+<td>~0.50</td>
+<td>~0.13</td>
+<td>0.1291</td>
+</tr>
+<tr>
+<td></td>
+<td>10</td>
+<td>~0.50</td>
+<td>~0.09</td>
+<td>0.0913</td>
+</tr>
+<tr>
+<td></td>
+<td>30</td>
+<td>~0.50</td>
+<td>~0.05</td>
+<td>0.0527</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>~0.50</td>
+<td>~0.04</td>
+<td>0.0408</td>
+</tr>
+<tr>
+<td>Exponential</td>
+<td>5</td>
+<td>~1.00</td>
+<td>~0.45</td>
+<td>0.4472</td>
+</tr>
+<tr>
+<td></td>
+<td>10</td>
+<td>~1.00</td>
+<td>~0.31</td>
+<td>0.3162</td>
+</tr>
+<tr>
+<td></td>
+<td>30</td>
+<td>~1.00</td>
+<td>~0.18</td>
+<td>0.1826</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>~1.00</td>
+<td>~0.14</td>
+<td>0.1414</td>
+</tr>
+<tr>
+<td>Binomial</td>
+<td>5</td>
+<td>~5.00</td>
+<td>~0.71</td>
+<td>0.7071</td>
+</tr>
+<tr>
+<td></td>
+<td>10</td>
+<td>~5.00</td>
+<td>~0.50</td>
+<td>0.5000</td>
+</tr>
+<tr>
+<td></td>
+<td>30</td>
+<td>~5.00</td>
+<td>~0.29</td>
+<td>0.2887</td>
+</tr>
+<tr>
+<td></td>
+<td>50</td>
+<td>~5.00</td>
+<td>~0.22</td>
+<td>0.2236</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="insights-and-interpretation">💡 Insights and Interpretation</h2>
+<ul>
+<li>The <strong>sampling distribution of the mean becomes more normal as sample size increases</strong>, even for a skewed distribution like the exponential.</li>
+<li>The <strong>empirical standard deviations of the sample means</strong> closely match the <strong>theoretical standard errors</strong> predicted by CLT.</li>
+<li>The <strong>rate of convergence to normality</strong> depends on the skewness of the original population:</li>
+<li><strong>Symmetric distributions (Uniform, Binomial)</strong> converge faster.</li>
+<li><strong>Highly skewed distributions (Exponential)</strong> require larger <span class="arithmatex">\(n\)</span> for symmetry to emerge.</li>
+<li>The <strong>spread of the sampling distribution decreases</strong> as sample size increases, confirming:
+  <span class="arithmatex">\(\text{SE} = \frac{\sigma}{\sqrt{n}}\)</span></li>
+</ul>
+<hr/>
+<h2 id="practical-significance">🌍 Practical Significance</h2>
+<p>The CLT underpins a wide range of real-world applications:</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manufacturing</td>
+<td>Estimating defect rates in large-scale production.</td>
+</tr>
+<tr>
+<td>Finance</td>
+<td>Modeling average returns over multiple trading days.</td>
+</tr>
+<tr>
+<td>Medicine</td>
+<td>Analyzing average effect of treatments across trials.</td>
+</tr>
+<tr>
+<td>Social Science</td>
+<td>Survey analysis and polling estimations.</td>
+</tr>
+<tr>
+<td>AI &amp; ML</td>
+<td>Bootstrap aggregating (bagging) for model predictions.</td>
+</tr>
+</tbody>
+</table>
+<p>Even when data isn't normally distributed, <strong>CLT allows inference using normal models</strong> — as long as the sample size is reasonably large.</p>
+<hr/>
+<h2 id="conclusion">✅ Conclusion</h2>
+<p>This simulation-based exploration confirms the Central Limit Theorem:</p>
+<ul>
+<li><strong>Sample means tend toward a normal distribution</strong> as the number of observations increases.</li>
+<li><strong>The empirical results align with theoretical predictions</strong>, both in terms of shape and variability.</li>
+<li>The CLT enables <strong>practical statistical inference</strong> across domains, making it essential for everything from quality control to financial modeling and beyond.</li>
+</ul>
+<p>By experimenting with different populations and observing convergence firsthand, we gain not only <strong>statistical insight</strong> but also <strong>intuitive understanding</strong> of one of the most powerful theorems in probability theory.</p>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
