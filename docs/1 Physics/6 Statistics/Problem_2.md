@@ -54,6 +54,8 @@ This ratio improves with more samples due to the Law of Large Numbers.
 
 Each plot shows the unit circle in blue with points that fall inside (blue) and outside (red).
 
+![Circle Method](circle_method.png)
+
 #### Simulation Snippet
 
 ```python
@@ -66,11 +68,24 @@ def monte_carlo_pi(n):
     inside = x**2 + y**2 <= 1
     pi_est = 4 * np.sum(inside) / n
     return pi_est, x, y, inside
+
+def plot_circle_method(n=5000):
+    _, x, y, inside = monte_carlo_pi(n)
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.set_aspect('equal')
+    ax.add_patch(plt.Circle((0, 0), 1, color='lightblue', alpha=0.5, label='Unit Circle'))
+
+    ax.scatter(x[inside], y[inside], s=1, color='blue', label='Inside')
+    ax.scatter(x[~inside], y[~inside], s=1, color='red', label='Outside')
+
+    ax.set_xlim([-1, 1])
+    ax.set_ylim([-1, 1])
+    ax.set_title(f'Circle Method Monte Carlo (N = {n})')
+    ax.legend()
+    plt.grid(True)
+    plt.show()
 ```
-
-#### Multiple Trial Plots (e.g., $N = 10^2$ to $10^6$)
-
-Rendered as subplots showing convergence.
 
 ---
 
@@ -123,6 +138,8 @@ $$
 
 Each simulation draws random $\theta$ and position $x$ for each needle.
 
+![Buffon’s Needle](buffon_needles.png)
+
 #### Simulation Snippet
 
 ```python
@@ -132,9 +149,31 @@ def buffon_needle(n, L=1.0, d=1.0):
     crosses = x <= (L / 2) * np.sin(theta)
     pi_est = (2 * L * n) / (d * np.sum(crosses))
     return pi_est, x, theta, crosses
-```
 
-Needles are rendered in green (crossing) or gray (not crossing).
+def plot_buffon_needles(n=100, L=1.0, d=1.0):
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    for i in range(0, 6):
+        ax.axhline(i * d, color='gray', linewidth=1)
+
+    for _ in range(n):
+        theta = np.random.uniform(0, np.pi)
+        y_center = np.random.uniform(0, d * 5)
+        x_start = 0.5 - (L / 2) * np.cos(theta)
+        x_end = 0.5 + (L / 2) * np.cos(theta)
+        y_start = y_center - (L / 2) * np.sin(theta)
+        y_end = y_center + (L / 2) * np.sin(theta)
+
+        crosses = int((y_start // d) != (y_end // d))
+        color = 'green' if crosses else 'gray'
+        ax.plot([x_start, x_end], [y_start, y_end], color=color, linewidth=1)
+
+    ax.set_xlim([0, 1])
+    ax.set_ylim([0, d * 5])
+    ax.set_title("Buffon's Needle Simulation")
+    plt.grid(True)
+    plt.show()
+```
 
 ---
 
@@ -153,7 +192,8 @@ Both methods are evaluated over increasing trials:
 
 ### 🧮 Plotting Convergence
 
-Log-scale visualization of estimated π vs. trial count. <a href="https://colab.research.google.com/drive/1m-l-QEqqp5jBRGDBRUhkDUoewkSkULBd" target="_blank">Open Notebook</a>
+Log-scale visualization of estimated π vs. trial count.  
+<a href="https://colab.research.google.com/drive/1m-l-QEqqp5jBRGDBRUhkDUoewkSkULBd" target="_blank">Open Notebook</a>
 
 ![Monte Carlo](monte_carlo.png)
 
@@ -165,9 +205,13 @@ buffon_ests = [buffon_needle(n)[0] for n in trials]
 plt.plot(trials, circle_ests, marker='o', label='Circle Method')
 plt.plot(trials, buffon_ests, marker='s', label="Buffon's Needle")
 plt.axhline(np.pi, color='black', linestyle='--', label='π (True)')
-plt.xscale('log'); plt.xlabel('Trials (log)')
-plt.ylabel('π Estimate'); plt.title('Convergence of π Estimates')
-plt.legend(); plt.grid(True); plt.show()
+plt.xscale('log')
+plt.xlabel('Trials (log)')
+plt.ylabel('π Estimate')
+plt.title('Convergence of π Estimates')
+plt.legend()
+plt.grid(True)
+plt.show()
 ```
 
 ---
