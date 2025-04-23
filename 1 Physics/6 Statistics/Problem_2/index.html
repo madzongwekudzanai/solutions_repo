@@ -192,6 +192,7 @@ x^2 + y^2 \leq 1
 <hr/>
 <h3 id="visualization-circle-method-scenarios">📊 Visualization: Circle Method Scenarios</h3>
 <p>Each plot shows the unit circle in blue with points that fall inside (blue) and outside (red).</p>
+<p><img alt="Circle Method" src="../circle_method.png"/></p>
 <h4 id="simulation-snippet">Simulation Snippet</h4>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
@@ -202,9 +203,24 @@ def monte_carlo_pi(n):
     inside = x**2 + y**2 &lt;= 1
     pi_est = 4 * np.sum(inside) / n
     return pi_est, x, y, inside
+
+def plot_circle_method(n=5000):
+    _, x, y, inside = monte_carlo_pi(n)
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.set_aspect('equal')
+    ax.add_patch(plt.Circle((0, 0), 1, color='lightblue', alpha=0.5, label='Unit Circle'))
+
+    ax.scatter(x[inside], y[inside], s=1, color='blue', label='Inside')
+    ax.scatter(x[~inside], y[~inside], s=1, color='red', label='Outside')
+
+    ax.set_xlim([-1, 1])
+    ax.set_ylim([-1, 1])
+    ax.set_title(f'Circle Method Monte Carlo (N = {n})')
+    ax.legend()
+    plt.grid(True)
+    plt.show()
 </code></pre>
-<h4 id="multiple-trial-plots-eg-n-102-to-106">Multiple Trial Plots (e.g., <span class="arithmatex">\(N = 10^2\)</span> to <span class="arithmatex">\(10^6\)</span>)</h4>
-<p>Rendered as subplots showing convergence.</p>
 <hr/>
 <h2 id="part-ii-estimating-via-buffons-needle">📏 Part II: Estimating π via Buffon’s Needle</h2>
 <h3 id="theory_1">🔍 Theory</h3>
@@ -275,6 +291,7 @@ x \leq \frac{L}{2} \sin(\theta)
 <hr/>
 <h3 id="visualization-buffons-needle-drops">📊 Visualization: Buffon’s Needle Drops</h3>
 <p>Each simulation draws random <span class="arithmatex">\(\theta\)</span> and position <span class="arithmatex">\(x\)</span> for each needle.</p>
+<p><img alt="Buffon’s Needle" src="../buffon_needles.png"/></p>
 <h4 id="simulation-snippet_1">Simulation Snippet</h4>
 <pre><code class="language-python">def buffon_needle(n, L=1.0, d=1.0):
     x = np.random.uniform(0, d / 2, n)
@@ -282,8 +299,31 @@ x \leq \frac{L}{2} \sin(\theta)
     crosses = x &lt;= (L / 2) * np.sin(theta)
     pi_est = (2 * L * n) / (d * np.sum(crosses))
     return pi_est, x, theta, crosses
+
+def plot_buffon_needles(n=100, L=1.0, d=1.0):
+    fig, ax = plt.subplots(figsize=(6, 6))
+
+    for i in range(0, 6):
+        ax.axhline(i * d, color='gray', linewidth=1)
+
+    for _ in range(n):
+        theta = np.random.uniform(0, np.pi)
+        y_center = np.random.uniform(0, d * 5)
+        x_start = 0.5 - (L / 2) * np.cos(theta)
+        x_end = 0.5 + (L / 2) * np.cos(theta)
+        y_start = y_center - (L / 2) * np.sin(theta)
+        y_end = y_center + (L / 2) * np.sin(theta)
+
+        crosses = int((y_start // d) != (y_end // d))
+        color = 'green' if crosses else 'gray'
+        ax.plot([x_start, x_end], [y_start, y_end], color=color, linewidth=1)
+
+    ax.set_xlim([0, 1])
+    ax.set_ylim([0, d * 5])
+    ax.set_title("Buffon's Needle Simulation")
+    plt.grid(True)
+    plt.show()
 </code></pre>
-<p>Needles are rendered in green (crossing) or gray (not crossing).</p>
 <hr/>
 <h2 id="convergence-comparison">📈 Convergence Comparison</h2>
 <p>Both methods are evaluated over increasing trials:</p>
@@ -329,7 +369,8 @@ x \leq \frac{L}{2} \sin(\theta)
 </tbody>
 </table>
 <h3 id="plotting-convergence">🧮 Plotting Convergence</h3>
-<p>Log-scale visualization of estimated π vs. trial count. <a href="https://colab.research.google.com/drive/1m-l-QEqqp5jBRGDBRUhkDUoewkSkULBd" target="_blank">Open Notebook</a></p>
+<p>Log-scale visualization of estimated π vs. trial count.<br/>
+<a href="https://colab.research.google.com/drive/1m-l-QEqqp5jBRGDBRUhkDUoewkSkULBd" target="_blank">Open Notebook</a></p>
 <p><img alt="Monte Carlo" src="../monte_carlo.png"/></p>
 <pre><code class="language-python">trials = [10, 100, 1000, 10_000, 100_000, 1_000_000]
 circle_ests = [monte_carlo_pi(n)[0] for n in trials]
@@ -338,9 +379,13 @@ buffon_ests = [buffon_needle(n)[0] for n in trials]
 plt.plot(trials, circle_ests, marker='o', label='Circle Method')
 plt.plot(trials, buffon_ests, marker='s', label="Buffon's Needle")
 plt.axhline(np.pi, color='black', linestyle='--', label='π (True)')
-plt.xscale('log'); plt.xlabel('Trials (log)')
-plt.ylabel('π Estimate'); plt.title('Convergence of π Estimates')
-plt.legend(); plt.grid(True); plt.show()
+plt.xscale('log')
+plt.xlabel('Trials (log)')
+plt.ylabel('π Estimate')
+plt.title('Convergence of π Estimates')
+plt.legend()
+plt.grid(True)
+plt.show()
 </code></pre>
 <hr/>
 <h2 id="final-remarks">🧾 Final Remarks</h2>
